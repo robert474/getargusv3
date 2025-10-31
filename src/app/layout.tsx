@@ -201,6 +201,24 @@ export default function RootLayout({
         />
 
     
+     {/* Reb2b Tracking Script */}
+        <Script
+          id="reb2b-tracking"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(key) {
+                if (window.reb2b) return;
+                window.reb2b = {loaded: true};
+                var s = document.createElement("script");
+                s.async = true;
+                s.src = "https://b2bjsstore.s3.us-west-2.amazonaws.com/b/" + key + "/" + key + ".js.gz";
+                document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);
+              }("R6G5YHZ2Q765");
+            `
+          }}
+        />
+    
       </head>
       <body
         className={`${libreFranklin.variable} ${ibmPlexSans.variable} antialiased`}
