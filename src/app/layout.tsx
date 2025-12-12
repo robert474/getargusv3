@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   title: "Argus AI | Real-Time Route Optimization & Geospatial Analytics for Mobility & Logistics",
   description: "AI-powered route optimization and real-time traffic intelligence for ride-sharing, food delivery, and last-mile logistics. Sub-10-second incident detection. Reduce costs 20-30%, increase deliveries 5-15%. Machine learning APIs for predictive routing and ETA accuracy.",
   keywords: "route optimization, geospatial analytics, machine learning for logistics, real-time mapping APIs, predictive routing models, ETA accuracy, last-mile efficiency, fleet telematics, ride-sharing technology, food delivery optimization, dynamic routing, traffic prediction AI, delivery route planning, autonomous vehicle routing, multimodal transport optimization, last-mile logistics software, zero-emission fleet routing",
-  authors: [{ name: "Argus AI" }],
-  creator: "Argus AI",
-  publisher: "Argus AI",
+  authors: [{ name: "Argus AI" }, { name: "Traffic Data Group, Inc." }],
+  creator: "Traffic Data Group, Inc.",
+  publisher: "Traffic Data Group, Inc.",
   robots: {
     index: true,
     follow: true,
@@ -101,11 +101,12 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Argus AI",
-              "alternateName": "Argus Artificial Intelligence",
+              "legalName": "Traffic Data Group, Inc.",
+              "alternateName": ["Argus Artificial Intelligence", "Traffic Data Group"],
               "url": "https://www.getargus.ai",
               "logo": "https://www.getargus.ai/images/logo-square.png",
               "image": "https://www.getargus.ai/images/logo-square.png",
-              "description": "AI-powered route optimization and real-time traffic intelligence platform for ride-sharing, food delivery, and last-mile logistics.",
+              "description": "AI-powered route optimization and real-time traffic intelligence platform for ride-sharing, food delivery, and last-mile logistics. Argus AI is a product of Traffic Data Group, Inc.",
               "email": "info@getargus.ai",
               "telephone": "+1-402-205-7814",
               "address": {
@@ -118,6 +119,15 @@ export default function RootLayout({
                 "@type": "Country",
                 "name": "United States"
               },
+              "foundingLocation": {
+                "@type": "Place",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Lincoln",
+                  "addressRegion": "NE",
+                  "addressCountry": "US"
+                }
+              },
               "knowsAbout": [
                 "Route Optimization",
                 "Geospatial Analytics",
@@ -126,6 +136,9 @@ export default function RootLayout({
                 "Predictive Routing Models",
                 "ETA Accuracy",
                 "Last-Mile Efficiency"
+              ],
+              "sameAs": [
+                "https://www.linkedin.com/company/getargus"
               ]
             })
           }}
@@ -143,12 +156,16 @@ export default function RootLayout({
               "name": "Argus AI Route Optimization Platform",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web-based, API",
-              "description": "Real-time route optimization and traffic intelligence API for mobility platforms, food delivery services, and last-mile logistics.",
+              "description": "Real-time route optimization and traffic intelligence API for mobility platforms, food delivery services, and last-mile logistics. A product of Traffic Data Group, Inc.",
+              "author": {
+                "@type": "Organization",
+                "name": "Traffic Data Group, Inc.",
+                "alternateName": "Argus AI"
+              },
               "offers": {
                 "@type": "Offer",
                 "availability": "https://schema.org/InStock",
                 "url": "https://www.getargus.ai"
-
               },
               "featureList": [
                 "Sub-10-second incident detection",
@@ -194,14 +211,21 @@ export default function RootLayout({
                     "@type": "Answer",
                     "text": "Our predictive routing models use real-time traffic intelligence and machine learning to provide industry-leading ETA accuracy. We detect incidents and traffic anomalies in under 10 seconds."
                   }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the relationship between Argus AI and Traffic Data Group?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Argus AI is a product developed and operated by Traffic Data Group, Inc., a company based in Lincoln, Nebraska specializing in AI-powered traffic intelligence and route optimization solutions."
+                  }
                 }
               ]
             })
           }}
         />
 
-    
-     {/* Reb2b Tracking Script */}
+        {/* Reb2b Tracking Script */}
         <Script
           id="reb2b-tracking"
           strategy="afterInteractive"

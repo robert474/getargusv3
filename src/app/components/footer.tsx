@@ -129,10 +129,14 @@ export default function Footer() {
 </div>
 
           {/* Company Column - Desktop */}
-  {/* Company Column - Desktop */}
           <div className="hidden lg:block">
             <h3 className="font-semibold text-base mb-4 text-[#C9A23A]">Company</h3>
             <ul className="space-y-2.5">
+              <li>
+                <Link href="/corporate-info" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
+                  Corporate Info
+                </Link>
+              </li>
               <li>
                 <Link href="/about" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
                   About
@@ -328,12 +332,17 @@ export default function Footer() {
               {isCompanyOpen && (
                 <ul className="pb-4 space-y-2">
                   <li>
+                    <Link href="/corporate-info" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
+                      Corporate Info
+                    </Link>
+                  </li>
+                  <li>
                     <Link href="/about" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
                       About
                     </Link>
                   </li>
                   <li>
-                    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
+                    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
                       Contact
                     </a>
                   </li>
@@ -365,7 +374,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-700">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Argus AI. All rights reserved.
+              © {new Date().getFullYear()} Traffic Data Group, Inc., doing business as Argus AI. All rights reserved.
             </p>
             <div className="flex space-x-4 text-sm">
               <Link href="/privacy-policy" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200">
