@@ -1,6 +1,13 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+interface CustomNextConfig extends NextConfig {
+  eslint?: {
+    ignoreDuringBuilds?: boolean;
+    dirs?: string[];
+  };
+}
+
+const nextConfig: CustomNextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
