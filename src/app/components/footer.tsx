@@ -128,26 +128,57 @@ export default function Footer() {
   </ul>
 </div>
 
+          {/* Developer Column - Desktop */}
+          <div className="hidden lg:block">
+            <h3 className="font-semibold text-base mb-4 text-[#C9A23A]">Developer</h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link href="/developer" className="text-gray-300 hover:text-[#C9A23A] transition-colors duration-200 text-sm font-semibold">
+                  Developer Hub
+                </Link>
+              </li>
+              <li>
+                <Link href="/developer/api" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
+                  API Documentation
+                </Link>
+              </li>
+              <li>
+                <Link href="/developer/data-sources" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
+                  Data Sources
+                </Link>
+              </li>
+              <li>
+                <a href="https://argusapi.ai/documentation" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
+                  Full API Reference
+                </a>
+              </li>
+            </ul>
+          </div>
+
           {/* Company Column - Desktop */}
           <div className="hidden lg:block">
             <h3 className="font-semibold text-base mb-4 text-[#C9A23A]">Company</h3>
             <ul className="space-y-2.5">
               <li>
-                <Link href="/corporate-info" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
-                  Corporate Info
-                </Link>
-              </li>
-              <li>
                 <Link href="/about" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
-                  About
+                  About Us
                 </Link>
               </li>
               <li>
-                <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
-                  Contact
-                </a>
+                <Link href="/company/vision" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
+                  Our Vision
+                </Link>
               </li>
-      
+              <li>
+                <Link href="/company/contact" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/company/blog" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
+                  Blog
+                </Link>
+              </li>
             </ul>
             <div className="mt-6 space-y-2">
               <div className="flex items-center space-x-2">
@@ -310,6 +341,46 @@ export default function Footer() {
 )}
             </div>
 
+            {/* Developer Dropdown */}
+            <div className="border-b border-gray-700">
+              <button
+                onClick={() => setIsProductsOpen(!isProductsOpen)}
+                className="w-full flex justify-between items-center py-3 text-[#C9A23A] font-semibold"
+              >
+                Developer
+                <svg
+                  className={`w-5 h-5 transform transition-transform duration-200 ${isProductsOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {isProductsOpen && (
+                <ul className="pb-4 space-y-2">
+                  <li>
+                    <Link href="/developer" className="block text-gray-300 hover:text-[#C9A23A] transition-colors duration-200 py-2 font-semibold">
+                      Developer Hub
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/developer/api" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
+                      API Documentation
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/developer/data-sources" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
+                      Data Sources
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </div>
+
             {/* Company Dropdown */}
             <div className="border-b border-gray-700">
               <button
@@ -332,25 +403,25 @@ export default function Footer() {
               {isCompanyOpen && (
                 <ul className="pb-4 space-y-2">
                   <li>
-                    <Link href="/corporate-info" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
-                      Corporate Info
-                    </Link>
-                  </li>
-                  <li>
                     <Link href="/about" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
-                      About
+                      About Us
                     </Link>
                   </li>
                   <li>
-                    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
-                      Contact
-                    </a>
-                  </li>
-                  {/* <li>
-                    <Link href="/archives" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
-                      Archives
+                    <Link href="/company/vision" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
+                      Our Vision
                     </Link>
-                  </li> */}
+                  </li>
+                  <li>
+                    <Link href="/company/contact" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
+                      Contact Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/company/blog" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
+                      Blog
+                    </Link>
+                  </li>
                 </ul>
               )}
             </div>

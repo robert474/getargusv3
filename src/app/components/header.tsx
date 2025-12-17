@@ -304,13 +304,19 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
-  
+  const [isDeveloperOpen, setIsDeveloperOpen] = useState(false);
+  const [isCompanyOpen, setIsCompanyOpen] = useState(false);
+
   const pathname = usePathname();
   const isOnSolutionsPage = pathname === '/solutions';
   const isOnIndustriesPage = pathname === '/industries';
-  
+  const isOnDeveloperPage = pathname?.startsWith('/developer');
+  const isOnCompanyPage = pathname?.startsWith('/company') || pathname === '/about' || pathname === '/privacy-policy' || pathname === '/terms-of-service';
+
   const solutionsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const industriesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const developerTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const companyTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -339,6 +345,32 @@ export default function Header() {
   const handleIndustriesMouseLeave = () => {
     industriesTimeoutRef.current = setTimeout(() => {
       setIsIndustriesOpen(false);
+    }, 300);
+  };
+
+  const handleDeveloperMouseEnter = () => {
+    if (developerTimeoutRef.current) {
+      clearTimeout(developerTimeoutRef.current);
+    }
+    setIsDeveloperOpen(true);
+  };
+
+  const handleDeveloperMouseLeave = () => {
+    developerTimeoutRef.current = setTimeout(() => {
+      setIsDeveloperOpen(false);
+    }, 300);
+  };
+
+  const handleCompanyMouseEnter = () => {
+    if (companyTimeoutRef.current) {
+      clearTimeout(companyTimeoutRef.current);
+    }
+    setIsCompanyOpen(true);
+  };
+
+  const handleCompanyMouseLeave = () => {
+    companyTimeoutRef.current = setTimeout(() => {
+      setIsCompanyOpen(false);
     }, 300);
   };
 
@@ -503,12 +535,133 @@ export default function Header() {
               )}
             </div>
 
-            <Link
-              href="/about"
-              className="text-[#0F172A] hover:text-[#C9A23A] transition-colors duration-200 font-medium"
+            {/* Developer Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={!isOnDeveloperPage ? handleDeveloperMouseEnter : undefined}
+              onMouseLeave={!isOnDeveloperPage ? handleDeveloperMouseLeave : undefined}
             >
-              About
-            </Link>
+              <Link
+                href="/developer"
+                className={`transition-colors duration-200 font-medium ${
+                  isOnDeveloperPage
+                    ? 'text-[#C9A23A] border-b-2 border-[#C9A23A] pb-1'
+                    : 'text-[#0F172A] hover:text-[#C9A23A]'
+                }`}
+              >
+                Developer
+              </Link>
+
+              {isDeveloperOpen && !isOnDeveloperPage && (
+                <div className="fixed left-1/2 transform -translate-x-1/2 top-20 w-[400px] bg-white shadow-xl rounded-b-lg overflow-hidden border border-gray-100">
+                  <div className="p-6">
+                    <Link
+                      href="/developer/api"
+                      onClick={() => setIsDeveloperOpen(false)}
+                      className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
+                    >
+                      <span className="block font-semibold">API Documentation</span>
+                      <span className="block text-xs text-gray-500 mt-0.5">Integrate real-time traffic intelligence</span>
+                    </Link>
+                    <Link
+                      href="/developer/data-sources"
+                      onClick={() => setIsDeveloperOpen(false)}
+                      className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
+                    >
+                      <span className="block font-semibold">Aggregated Data Sources</span>
+                      <span className="block text-xs text-gray-500 mt-0.5">911, telematics, sensors, video inference</span>
+                    </Link>
+                    <a
+                      href="https://argusapi.ai/documentation"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsDeveloperOpen(false)}
+                      className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
+                    >
+                      <span className="block font-semibold">Full API Reference</span>
+                      <span className="block text-xs text-gray-500 mt-0.5">argusapi.ai documentation</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Company Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={!isOnCompanyPage ? handleCompanyMouseEnter : undefined}
+              onMouseLeave={!isOnCompanyPage ? handleCompanyMouseLeave : undefined}
+            >
+              <span
+                className={`cursor-pointer transition-colors duration-200 font-medium ${
+                  isOnCompanyPage
+                    ? 'text-[#C9A23A] border-b-2 border-[#C9A23A] pb-1'
+                    : 'text-[#0F172A] hover:text-[#C9A23A]'
+                }`}
+              >
+                Company
+              </span>
+
+              {isCompanyOpen && !isOnCompanyPage && (
+                <div className="fixed left-1/2 transform -translate-x-1/2 top-20 w-[400px] bg-white shadow-xl rounded-b-lg overflow-hidden border border-gray-100">
+                  <div className="p-6">
+                    <Link
+                      href="/about"
+                      onClick={() => setIsCompanyOpen(false)}
+                      className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
+                    >
+                      About Us
+                    </Link>
+                    <Link
+                      href="/company/vision"
+                      onClick={() => setIsCompanyOpen(false)}
+                      className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
+                    >
+                      Our Vision
+                    </Link>
+                    <Link
+                      href="/company/contact"
+                      onClick={() => setIsCompanyOpen(false)}
+                      className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
+                    >
+                      Contact Us
+                    </Link>
+                    <Link
+                      href="/company/blog"
+                      onClick={() => setIsCompanyOpen(false)}
+                      className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
+                    >
+                      Blog
+                    </Link>
+                    <div className="border-t border-gray-100 mt-2 pt-2">
+                      <Link
+                        href="/privacy-policy"
+                        onClick={() => setIsCompanyOpen(false)}
+                        className="block py-2 px-3 text-gray-500 hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md text-xs"
+                      >
+                        Privacy Policy
+                      </Link>
+                      <Link
+                        href="/terms-of-service"
+                        onClick={() => setIsCompanyOpen(false)}
+                        className="block py-2 px-3 text-gray-500 hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md text-xs"
+                      >
+                        Terms of Service
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Performance - Coming Soon */}
+            <span
+              className="text-gray-400 cursor-default font-medium flex items-center gap-1"
+              title="Coming Soon"
+            >
+              Performance
+              <span className="text-[10px] bg-gray-200 text-gray-500 px-1.5 py-0.5 rounded-full uppercase tracking-wider">Soon</span>
+            </span>
           </div>
 
           {/* Contact Button - Far Right */}
@@ -565,6 +718,13 @@ export default function Header() {
               Industries
             </Link>
             <Link
+              href="/developer"
+              className="block px-4 py-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Developer
+            </Link>
+            <Link
               href="/about"
               className="block px-4 py-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium"
               onClick={() => setIsMenuOpen(false)}
@@ -572,11 +732,28 @@ export default function Header() {
               About
             </Link>
             <Link
-              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+              href="/company/vision"
+              className="block px-4 py-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Our Vision
+            </Link>
+            <Link
+              href="/company/blog"
+              className="block px-4 py-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Blog
+            </Link>
+            <span className="block px-4 py-3 text-gray-400 rounded-md font-medium">
+              Performance <span className="text-xs bg-gray-200 text-gray-500 px-1.5 py-0.5 rounded-full ml-1">Soon</span>
+            </span>
+            <Link
+              href="/company/contact"
               className="block px-4 py-3 bg-[#7FB7FF] text-[#0F172A] hover:bg-[#A5CEFF] transition-colors duration-200 rounded-md font-semibold text-center"
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact
+              Contact Us
             </Link>
           </div>
         )}
