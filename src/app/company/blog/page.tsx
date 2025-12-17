@@ -1,6 +1,7 @@
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -25,6 +26,7 @@ const blogPosts = [
     readTime: '10 min read',
     category: 'Engineering',
     featured: true,
+    image: '/images/incidentdashboard.png',
   },
   {
     slug: 'best-traffic-data-for-route-optimization',
@@ -34,6 +36,7 @@ const blogPosts = [
     readTime: '8 min read',
     category: 'Technical Comparison',
     featured: false,
+    image: '/images/lastmile1.png',
   },
   {
     slug: 'real-time-traffic-data-for-navigation-apps',
@@ -43,6 +46,7 @@ const blogPosts = [
     readTime: '9 min read',
     category: 'Technical',
     featured: false,
+    image: '/images/transportation.png',
   },
   {
     slug: 'comprehensive-traffic-data-guide-for-developers',
@@ -52,6 +56,7 @@ const blogPosts = [
     readTime: '12 min read',
     category: 'Developer Guide',
     featured: false,
+    image: '/images/solutions.png',
   },
   {
     slug: 'new-traffic-data-sources-2024',
@@ -61,6 +66,7 @@ const blogPosts = [
     readTime: '7 min read',
     category: 'Industry Update',
     featured: false,
+    image: '/images/dothero.png',
   },
   {
     slug: 'unique-traffic-data-sources-for-navigation',
@@ -70,6 +76,7 @@ const blogPosts = [
     readTime: '8 min read',
     category: 'Developer Guide',
     featured: false,
+    image: '/images/priorityincidents.png',
   },
   {
     slug: 'siloed-traffic-data-integration-challenges',
@@ -79,6 +86,7 @@ const blogPosts = [
     readTime: '9 min read',
     category: 'Data Engineering',
     featured: false,
+    image: '/images/incidentdashboard1.png',
   },
   {
     slug: 'traffic-cameras-untapped-potential-for-routing',
@@ -88,6 +96,7 @@ const blogPosts = [
     readTime: '8 min read',
     category: 'Technology',
     featured: false,
+    image: '/images/camera.png',
   },
   {
     slug: 'solving-fragmented-traffic-data-aggregation',
@@ -97,6 +106,7 @@ const blogPosts = [
     readTime: '10 min read',
     category: 'Developer Guide',
     featured: false,
+    image: '/images/sol.png',
   },
   {
     slug: 'untapped-dashcam-data-for-traffic-intelligence',
@@ -106,6 +116,7 @@ const blogPosts = [
     readTime: '9 min read',
     category: 'Data Engineering',
     featured: false,
+    image: '/images/cars.png',
   },
   {
     slug: 'why-connected-vehicles-wont-solve-traffic-data-fragmentation',
@@ -115,6 +126,7 @@ const blogPosts = [
     readTime: '8 min read',
     category: 'Industry Analysis',
     featured: false,
+    image: '/images/cars2.png',
   },
   {
     slug: 'hidden-cost-of-latency-in-traffic-alerts',
@@ -124,6 +136,7 @@ const blogPosts = [
     readTime: '6 min read',
     category: 'Technical',
     featured: false,
+    image: '/images/incidentdashboard.png',
   },
   {
     slug: 'how-ai-video-inference-changes-incident-detection',
@@ -133,6 +146,7 @@ const blogPosts = [
     readTime: '7 min read',
     category: 'Technology',
     featured: false,
+    image: '/images/camera.png',
   },
   {
     slug: 'five-sources-of-real-time-traffic-data',
@@ -142,6 +156,7 @@ const blogPosts = [
     readTime: '10 min read',
     category: 'Developer Guide',
     featured: false,
+    image: '/images/traffic.png',
   },
 ];
 
@@ -197,10 +212,14 @@ export default function BlogPage() {
                         </span>
                       </div>
                     </div>
-                    <div className="bg-gradient-to-br from-[#C9A23A]/20 to-[#0F172A]/80 p-8 md:p-12 flex items-center justify-center">
-                      <div className="text-center">
-                        <span className="text-6xl md:text-8xl font-bold text-white/10">01</span>
-                      </div>
+                    <div className="relative h-64 md:h-auto">
+                      <Image
+                        src={featuredPost.image}
+                        alt={featuredPost.title}
+                        fill
+                        className="object-cover"
+                        priority
+                      />
                     </div>
                   </div>
                 </article>
@@ -218,8 +237,13 @@ export default function BlogPage() {
               {regularPosts.map((post, idx) => (
                 <Link key={idx} href={`/company/blog/${post.slug}`} className="group">
                   <article className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-all h-full flex flex-col">
-                    <div className="h-40 bg-gradient-to-br from-[#F2F5F9] to-[#0F172A]/10 flex items-center justify-center">
-                      <span className="text-4xl font-bold text-[#0F172A]/10">{String(idx + 2).padStart(2, '0')}</span>
+                    <div className="h-40 relative">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                     <div className="p-6 flex flex-col flex-1">
                       <span className="text-xs font-semibold text-[#C9A23A] uppercase tracking-wider mb-2">
