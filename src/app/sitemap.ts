@@ -92,6 +92,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Blog posts
   const blogPosts = [
+    'how-engineers-solve-navigation-routing-challenges',
+    'best-traffic-data-for-route-optimization',
+    'real-time-traffic-data-for-navigation-apps',
+    'comprehensive-traffic-data-guide-for-developers',
+    'new-traffic-data-sources-2024',
+    'unique-traffic-data-sources-for-navigation',
+    'siloed-traffic-data-integration-challenges',
+    'traffic-cameras-untapped-potential-for-routing',
+    'solving-fragmented-traffic-data-aggregation',
+    'untapped-dashcam-data-for-traffic-intelligence',
     'why-connected-vehicles-wont-solve-traffic-data-fragmentation',
     'hidden-cost-of-latency-in-traffic-alerts',
     'how-ai-video-inference-changes-incident-detection',

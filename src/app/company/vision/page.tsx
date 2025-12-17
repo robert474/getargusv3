@@ -272,41 +272,41 @@ export default function VisionPage() {
             <div className="overflow-x-auto">
               <table className="w-full max-w-4xl mx-auto">
                 <thead>
-                  <tr className="border-b-2 border-[#0F172A]">
+                  <tr className="border-b-2 border-[#0F172A] bg-[#F2F5F9]">
                     <th className="text-left py-4 px-4 font-bold text-[#0F172A]">Capability</th>
-                    <th className="text-center py-4 px-4 font-bold text-gray-500">Traditional Sources</th>
+                    <th className="text-center py-4 px-4 font-bold text-gray-600">Traditional Sources</th>
                     <th className="text-center py-4 px-4 font-bold text-[#C9A23A]">Argus AI</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-gray-200">
-                    <td className="py-4 px-4">Detection Latency</td>
-                    <td className="py-4 px-4 text-center text-gray-500">30-60+ seconds</td>
+                  <tr className="border-b border-gray-200 bg-white">
+                    <td className="py-4 px-4 text-[#0F172A] font-medium">Detection Latency</td>
+                    <td className="py-4 px-4 text-center text-gray-600">30-60+ seconds</td>
                     <td className="py-4 px-4 text-center text-[#0F172A] font-semibold">&lt;10 seconds</td>
                   </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="py-4 px-4">Vehicle Coverage</td>
-                    <td className="py-4 px-4 text-center text-gray-500">3-5% (connected only)</td>
+                  <tr className="border-b border-gray-200 bg-[#F2F5F9]/50">
+                    <td className="py-4 px-4 text-[#0F172A] font-medium">Vehicle Coverage</td>
+                    <td className="py-4 px-4 text-center text-gray-600">3-5% (connected only)</td>
                     <td className="py-4 px-4 text-center text-[#0F172A] font-semibold">All vehicles (via video)</td>
                   </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="py-4 px-4">Visual Context</td>
-                    <td className="py-4 px-4 text-center text-gray-500">None</td>
+                  <tr className="border-b border-gray-200 bg-white">
+                    <td className="py-4 px-4 text-[#0F172A] font-medium">Visual Context</td>
+                    <td className="py-4 px-4 text-center text-gray-600">None</td>
                     <td className="py-4 px-4 text-center text-[#0F172A] font-semibold">Full AI inference</td>
                   </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="py-4 px-4">Data Sources</td>
-                    <td className="py-4 px-4 text-center text-gray-500">Single provider silos</td>
+                  <tr className="border-b border-gray-200 bg-[#F2F5F9]/50">
+                    <td className="py-4 px-4 text-[#0F172A] font-medium">Data Sources</td>
+                    <td className="py-4 px-4 text-center text-gray-600">Single provider silos</td>
                     <td className="py-4 px-4 text-center text-[#0F172A] font-semibold">6+ aggregated sources</td>
                   </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="py-4 px-4">911 Integration</td>
-                    <td className="py-4 px-4 text-center text-gray-500">Rare</td>
+                  <tr className="border-b border-gray-200 bg-white">
+                    <td className="py-4 px-4 text-[#0F172A] font-medium">911 Integration</td>
+                    <td className="py-4 px-4 text-center text-gray-600">Rare</td>
                     <td className="py-4 px-4 text-center text-[#0F172A] font-semibold">Native</td>
                   </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="py-4 px-4">Incident Severity</td>
-                    <td className="py-4 px-4 text-center text-gray-500">Estimated from speed</td>
+                  <tr className="border-b border-gray-200 bg-[#F2F5F9]/50">
+                    <td className="py-4 px-4 text-[#0F172A] font-medium">Incident Severity</td>
+                    <td className="py-4 px-4 text-center text-gray-600">Estimated from speed</td>
                     <td className="py-4 px-4 text-center text-[#0F172A] font-semibold">Visual confirmation</td>
                   </tr>
                 </tbody>
