@@ -1,6 +1,7 @@
 import Header from '../components/header';
 import Footer from '../components/footer';
 import Link from 'next/link';
+import Script from 'next/script';
 import { Code, Database, Zap, Shield, ExternalLink } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -48,6 +49,58 @@ export default function DeveloperPage() {
 
   return (
     <>
+      {/* WebAPI Schema for GEO */}
+      <Script
+        id="schema-webapi"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebAPI",
+            "name": "Argus AI Traffic Intelligence API",
+            "description": "Real-time traffic data API aggregating 911 dispatch, telematics, roadway sensors, and AI video inference for incident detection and route optimization.",
+            "url": "https://argusapi.ai/documentation",
+            "provider": {
+              "@type": "Organization",
+              "name": "Traffic Data Group, Inc.",
+              "alternateName": "Argus AI"
+            },
+            "documentation": "https://argusapi.ai/documentation",
+            "termsOfService": "https://www.getargus.ai/terms-of-service",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "Contact for pricing"
+            }
+          })
+        }}
+      />
+      {/* BreadcrumbList Schema */}
+      <Script
+        id="schema-breadcrumb"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.getargus.ai"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Developer",
+                "item": "https://www.getargus.ai/developer"
+              }
+            ]
+          })
+        }}
+      />
       <Header />
       <main className="bg-white">
         {/* Hero Section */}

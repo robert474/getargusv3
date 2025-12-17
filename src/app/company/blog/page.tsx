@@ -44,6 +44,15 @@ const blogPosts = [
     category: 'Technology',
     featured: false,
   },
+  {
+    slug: 'five-sources-of-real-time-traffic-data',
+    title: 'The 5 Sources of Real-Time Traffic Data (And Why You Need All of Them)',
+    excerpt: 'Each traffic data source has strengths and blind spots. Here\'s a developer\'s guide to understanding what each provides—and why aggregating all five delivers comprehensive traffic intelligence.',
+    date: '2024-12-01',
+    readTime: '10 min read',
+    category: 'Developer Guide',
+    featured: false,
+  },
 ];
 
 export default function BlogPage() {

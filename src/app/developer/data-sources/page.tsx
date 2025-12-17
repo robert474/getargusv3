@@ -1,6 +1,7 @@
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Link from 'next/link';
+import Script from 'next/script';
 import { Radio, Car, Video, AlertTriangle, Wifi, Eye } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -75,6 +76,88 @@ export default function DataSourcesPage() {
 
   return (
     <>
+      {/* DataCatalog Schema for GEO */}
+      <Script
+        id="schema-datacatalog"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "DataCatalog",
+            "name": "Argus AI Traffic Data Sources",
+            "description": "Aggregated real-time traffic data from 911 dispatch, telematics, roadway sensors, traffic camera AI, and dashcam video inference.",
+            "url": "https://www.getargus.ai/developer/data-sources",
+            "provider": {
+              "@type": "Organization",
+              "name": "Traffic Data Group, Inc.",
+              "alternateName": "Argus AI"
+            },
+            "dataset": [
+              {
+                "@type": "Dataset",
+                "name": "911/PSAP Dispatch Data",
+                "description": "Real-time emergency dispatch alerts for traffic incidents",
+                "temporalCoverage": "Real-time"
+              },
+              {
+                "@type": "Dataset",
+                "name": "Telematics Data",
+                "description": "Connected vehicle and fleet telematics for traffic flow and incidents",
+                "temporalCoverage": "Real-time"
+              },
+              {
+                "@type": "Dataset",
+                "name": "Roadway Sensor Data",
+                "description": "Loop detector and radar sensor measurements for traffic volume and speed",
+                "temporalCoverage": "Real-time"
+              },
+              {
+                "@type": "Dataset",
+                "name": "Traffic Camera Video Inference",
+                "description": "AI-powered incident detection from traffic camera feeds",
+                "temporalCoverage": "Real-time"
+              },
+              {
+                "@type": "Dataset",
+                "name": "Dashcam Video Inference",
+                "description": "AI-powered road condition and incident detection from dashcam footage",
+                "temporalCoverage": "Real-time"
+              }
+            ]
+          })
+        }}
+      />
+      {/* BreadcrumbList Schema */}
+      <Script
+        id="schema-breadcrumb"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.getargus.ai"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Developer",
+                "item": "https://www.getargus.ai/developer"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Data Sources",
+                "item": "https://www.getargus.ai/developer/data-sources"
+              }
+            ]
+          })
+        }}
+      />
       <Header />
       <main className="bg-white">
         {/* Hero Section */}

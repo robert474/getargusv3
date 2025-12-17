@@ -20,11 +20,24 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus('submitting');
 
-    // For now, we'll just simulate success and show the booking link
-    // In production, this would submit to your backend or email service
-    setTimeout(() => {
-      setStatus('success');
-    }, 1000);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', company: '', interest: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
