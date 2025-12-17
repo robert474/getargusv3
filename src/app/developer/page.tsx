@@ -59,13 +59,13 @@ export default function DeveloperPage() {
             "@type": "WebAPI",
             "name": "Argus AI Traffic Intelligence API",
             "description": "Real-time traffic data API aggregating 911 dispatch, telematics, roadway sensors, and AI video inference for incident detection and route optimization.",
-            "url": "https://argusapi.ai/documentation",
+            "url": "https://www.getargus.ai/developer/api",
             "provider": {
               "@type": "Organization",
               "name": "Traffic Data Group, Inc.",
               "alternateName": "Argus AI"
             },
-            "documentation": "https://argusapi.ai/documentation",
+            "documentation": "https://www.getargus.ai/developer/api",
             "termsOfService": "https://www.getargus.ai/terms-of-service",
             "offers": {
               "@type": "Offer",
@@ -118,15 +118,12 @@ export default function DeveloperPage() {
                 and AI-powered video inference through a single, unified API.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a
-                  href="https://argusapi.ai/documentation"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/developer/api"
                   className="inline-flex items-center px-6 py-3 bg-[#C9A23A] text-white font-semibold rounded-lg hover:bg-[#E7C873] transition-colors"
                 >
                   View API Docs
-                  <ExternalLink className="ml-2 w-4 h-4" />
-                </a>
+                </Link>
                 <Link
                   href="/developer/data-sources"
                   className="inline-flex items-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[#0F172A] transition-colors"
@@ -237,14 +234,12 @@ export default function DeveloperPage() {
               Get API access and integrate real-time traffic intelligence into your application today.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="https://argusapi.ai/documentation"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/developer/api"
                 className="px-8 py-3 bg-[#C9A23A] text-white font-semibold rounded-lg hover:bg-[#E7C873] transition-colors"
               >
                 Get Started
-              </a>
+              </Link>
               <Link
                 href="/company/contact"
                 className="px-8 py-3 bg-[#7FB7FF] text-[#0F172A] font-semibold rounded-lg hover:bg-[#A5CEFF] transition-colors"

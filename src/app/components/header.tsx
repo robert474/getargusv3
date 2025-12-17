@@ -538,8 +538,8 @@ export default function Header() {
             {/* Developer Dropdown */}
             <div
               className="relative"
-              onMouseEnter={!isOnDeveloperPage ? handleDeveloperMouseEnter : undefined}
-              onMouseLeave={!isOnDeveloperPage ? handleDeveloperMouseLeave : undefined}
+              onMouseEnter={handleDeveloperMouseEnter}
+              onMouseLeave={handleDeveloperMouseLeave}
             >
               <Link
                 href="/developer"
@@ -552,7 +552,7 @@ export default function Header() {
                 Developer
               </Link>
 
-              {isDeveloperOpen && !isOnDeveloperPage && (
+              {isDeveloperOpen && (
                 <div className="fixed left-1/2 transform -translate-x-1/2 top-20 w-[400px] bg-white shadow-xl rounded-b-lg overflow-hidden border border-gray-100">
                   <div className="p-6">
                     <Link
@@ -571,16 +571,6 @@ export default function Header() {
                       <span className="block font-semibold">Aggregated Data Sources</span>
                       <span className="block text-xs text-gray-500 mt-0.5">911, telematics, sensors, video inference</span>
                     </Link>
-                    <a
-                      href="https://argusapi.ai/documentation"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => setIsDeveloperOpen(false)}
-                      className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
-                    >
-                      <span className="block font-semibold">Full API Reference</span>
-                      <span className="block text-xs text-gray-500 mt-0.5">argusapi.ai documentation</span>
-                    </a>
                   </div>
                 </div>
               )}
@@ -589,8 +579,8 @@ export default function Header() {
             {/* Company Dropdown */}
             <div
               className="relative"
-              onMouseEnter={!isOnCompanyPage ? handleCompanyMouseEnter : undefined}
-              onMouseLeave={!isOnCompanyPage ? handleCompanyMouseLeave : undefined}
+              onMouseEnter={handleCompanyMouseEnter}
+              onMouseLeave={handleCompanyMouseLeave}
             >
               <span
                 className={`cursor-pointer transition-colors duration-200 font-medium ${
@@ -602,7 +592,7 @@ export default function Header() {
                 Company
               </span>
 
-              {isCompanyOpen && !isOnCompanyPage && (
+              {isCompanyOpen && (
                 <div className="fixed left-1/2 transform -translate-x-1/2 top-20 w-[400px] bg-white shadow-xl rounded-b-lg overflow-hidden border border-gray-100">
                   <div className="p-6">
                     <Link

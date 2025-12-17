@@ -147,11 +147,6 @@ export default function Footer() {
                   Data Sources
                 </Link>
               </li>
-              <li>
-                <a href="https://argusapi.ai/documentation" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
-                  Full API Reference
-                </a>
-              </li>
             </ul>
           </div>
 

@@ -1,6 +1,7 @@
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar, Clock, ArrowLeft, Share2 } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -53,6 +54,20 @@ export default function BlogPost() {
             </div>
           </div>
         </section>
+
+        {/* Hero Image */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
+          <div className="rounded-xl overflow-hidden shadow-xl">
+            <Image
+              src="/images/solutions.png"
+              alt="Comprehensive traffic data sources overview for developers"
+              width={1200}
+              height={600}
+              className="w-full h-auto object-cover"
+              priority
+            />
+          </div>
+        </div>
 
         {/* Article Content */}
         <article className="py-16">
