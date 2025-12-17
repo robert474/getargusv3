@@ -9,9 +9,12 @@ Allow: /
 Crawl-delay: 1
 
 # ==================================================
-# SITEMAP LOCATION
+# SITEMAP & LLMs.txt LOCATION
 # ==================================================
 Sitemap: https://www.getargus.ai/sitemap.xml
+
+# LLMs.txt for AI language models
+# https://www.getargus.ai/llms.txt
 
 # ==================================================
 # SEARCH ENGINE CRAWLERS
