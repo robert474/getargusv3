@@ -56,9 +56,9 @@ export async function POST(request: NextRequest) {
 
     if (!leadResponse.ok) {
       const errorData = await leadResponse.text();
-      console.error('Close.com API error:', errorData);
+      console.error('Close.com API error:', leadResponse.status, errorData);
       return NextResponse.json(
-        { error: 'Failed to create lead' },
+        { error: `Close.com error: ${leadResponse.status} - ${errorData}` },
         { status: 500 }
       );
     }

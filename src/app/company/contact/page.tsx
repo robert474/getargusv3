@@ -15,6 +15,7 @@ export default function ContactPage() {
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,9 +34,12 @@ export default function ContactPage() {
         setStatus('success');
         setFormData({ name: '', email: '', company: '', interest: '', message: '' });
       } else {
+        const data = await response.json();
+        setErrorMessage(data.error || 'Unknown error');
         setStatus('error');
       }
-    } catch {
+    } catch (err) {
+      setErrorMessage(String(err));
       setStatus('error');
     }
   };
@@ -105,7 +109,9 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {status === 'error' && (
                       <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
-                        Something went wrong. Please try again or email us at info@getargus.ai
+                        <p className="font-semibold">Something went wrong:</p>
+                        <p className="text-sm mt-1">{errorMessage}</p>
+                        <p className="text-sm mt-2">Please try again or email us at info@getargus.ai</p>
                       </div>
                     )}
                     <div className="grid md:grid-cols-2 gap-6">
