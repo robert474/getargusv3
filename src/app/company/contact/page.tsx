@@ -115,7 +115,7 @@ export default function ContactPage() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors bg-white text-gray-900"
                           placeholder="Your name"
                         />
                       </div>
@@ -130,7 +130,7 @@ export default function ContactPage() {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors bg-white text-gray-900"
                           placeholder="you@company.com"
                         />
                       </div>
@@ -146,7 +146,7 @@ export default function ContactPage() {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors bg-white text-gray-900"
                         placeholder="Your company name"
                       />
                     </div>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                         name="interest"
                         value={formData.interest}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors bg-white"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors bg-white text-gray-900"
                       >
                         <option value="">Select an option</option>
                         <option value="api">API Integration</option>
@@ -182,7 +182,7 @@ export default function ContactPage() {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors resize-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors resize-none bg-white text-gray-900"
                         placeholder="Tell us about your use case or questions..."
                       />
                     </div>
