@@ -22,33 +22,51 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Log the submission (in production, send to email service)
-    console.log('Contact form submission:', {
-      name,
-      email,
-      company,
-      interest,
-      message,
-      timestamp: new Date().toISOString(),
+    // Close.com API key
+    const closeApiKey = process.env.CLOSE_API_KEY;
+
+    if (!closeApiKey) {
+      console.error('CLOSE_API_KEY not configured');
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      );
+    }
+
+    // Create lead in Close.com
+    const leadResponse = await fetch('https://api.close.com/api/v1/lead/', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Basic ${Buffer.from(closeApiKey + ':').toString('base64')}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: company || name,
+        contacts: [
+          {
+            name: name,
+            emails: [{ email: email, type: 'office' }],
+          }
+        ],
+        custom: {
+          'Interest': interest || 'General Inquiry',
+          'Message': message,
+          'Source': 'Website Contact Form',
+        }
+      }),
     });
 
-    // TODO: Integrate with email service (SendGrid, Resend, etc.)
-    // Example with Resend:
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: 'Argus AI <noreply@getargus.ai>',
-    //   to: 'info@getargus.ai',
-    //   subject: `Contact Form: ${interest || 'General Inquiry'}`,
-    //   html: `
-    //     <h2>New Contact Form Submission</h2>
-    //     <p><strong>Name:</strong> ${name}</p>
-    //     <p><strong>Email:</strong> ${email}</p>
-    //     <p><strong>Company:</strong> ${company || 'Not provided'}</p>
-    //     <p><strong>Interest:</strong> ${interest || 'Not specified'}</p>
-    //     <p><strong>Message:</strong></p>
-    //     <p>${message}</p>
-    //   `,
-    // });
+    if (!leadResponse.ok) {
+      const errorData = await leadResponse.text();
+      console.error('Close.com API error:', errorData);
+      return NextResponse.json(
+        { error: 'Failed to create lead' },
+        { status: 500 }
+      );
+    }
+
+    const leadData = await leadResponse.json();
+    console.log('Lead created in Close.com:', leadData.id);
 
     return NextResponse.json(
       { success: true, message: 'Form submitted successfully' },
