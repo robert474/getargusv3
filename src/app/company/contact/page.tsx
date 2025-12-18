@@ -103,6 +103,11 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {status === 'error' && (
+                      <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
+                        Something went wrong. Please try again or email us at info@getargus.ai
+                      </div>
+                    )}
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
