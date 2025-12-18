@@ -33,11 +33,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const authHeader = `Basic ${Buffer.from(closeApiKey + ':').toString('base64')}`;
+
     // Create lead in Close.com
     const leadResponse = await fetch('https://api.close.com/api/v1/lead/', {
       method: 'POST',
       headers: {
-        'Authorization': `Basic ${Buffer.from(closeApiKey + ':').toString('base64')}`,
+        'Authorization': authHeader,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -48,11 +50,7 @@ export async function POST(request: NextRequest) {
             emails: [{ email: email, type: 'office' }],
           }
         ],
-        custom: {
-          'Interest': interest || 'General Inquiry',
-          'Message': message,
-          'Source': 'Website Contact Form',
-        }
+        description: `Interest: ${interest || 'General Inquiry'}\n\nMessage:\n${message}\n\nSource: Website Contact Form`,
       }),
     });
 
