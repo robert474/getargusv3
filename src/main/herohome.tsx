@@ -151,7 +151,7 @@ export default function Hero() {
             {/* Description - Scales with screen size */}
             <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#F2F5F9] font-medium leading-relaxed mb-3 lg:mb-4">
               The only traffic data platform combining computer vision on cameras
-              with aggregated DOT, connected vehicle, and sensor data—delivered through one API.
+              with aggregated DOT, connected vehicle, and sensor data—pushing real-time alerts to drivers.
             </p>
 
             {/* Target Audience - Scales proportionally */}

@@ -266,13 +266,13 @@ export default function Solutions() {
     {
       icon: Car,
       title: 'Navigation Apps',
-      subtitle: 'Fastest Incident Data for Better Routing',
-      description: 'Power your navigation with the industry\'s fastest traffic alerts. While competitors deliver data in 1-5 minutes, our CV-powered detection sends incidents in under 10 seconds—giving your users the edge to avoid congestion before it builds.',
+      subtitle: 'Fastest Incident Alerts for Your Platform',
+      description: 'Integrate the industry\'s fastest traffic alerts into your navigation platform. While competitors deliver data in 1-5 minutes, our CV-powered detection sends incidents in under 10 seconds—giving your users real-time awareness.',
       features: [
         'Sub-10 second incident alerts',
         '6x faster than INRIX/TomTom/HERE',
         'Aggregated multi-source data API',
-        'Real-time route optimization'
+        'Push notifications to drivers'
       ],
       image: '/images/rideshare1.png',
       link: '/developer/api'
@@ -280,13 +280,13 @@ export default function Solutions() {
     {
       icon: Truck,
       title: 'Fleet Management',
-      subtitle: 'More Deliveries, Less Fuel, Safer Routes',
-      description: '5-15% more deliveries per hour in urban areas. Our aggregated traffic API combines CV camera detection, DOT sensors, and connected vehicle data to optimize routing, reduce fuel costs, and keep drivers on schedule.',
+      subtitle: 'Real-Time Alerts for Safer Routes',
+      description: 'Companion app for Platform Science and Geotab marketplaces (coming soon). Push real-time incident alerts to your drivers via our standalone iOS and Android app—powered by aggregated CV camera detection, DOT sensors, and connected vehicle data.',
       features: [
-        '5-15% more deliveries/hour',
-        'Reduce fuel spend 10-20%',
-        'Improve driver HOS compliance',
-        'Single API for all traffic data'
+        'Platform Science & Geotab integration',
+        'iOS & Android companion app',
+        'Real-time push notifications',
+        'Aggregated traffic alerts'
       ],
       image: '/images/lastmile1.png',
       link: '/industries#fleet'
@@ -294,13 +294,13 @@ export default function Solutions() {
     {
       icon: Car,
       title: 'Ride Share Platforms',
-      subtitle: 'More Rides Per Hour with Real-Time Intelligence',
-      description: '5-15% more rides per hour with the fastest incident alerts in the industry. Our unified API aggregates traffic cameras, DOT feeds, and connected vehicle data—one integration replaces multiple data providers.',
+      subtitle: 'Real-Time Incident Awareness',
+      description: 'Give your drivers the fastest incident alerts in the industry. Our unified API aggregates traffic cameras, DOT feeds, and connected vehicle data—push alerts directly to drivers via our companion app or your platform.',
       features: [
-        '5-15% more rides/hour',
         'Fastest alerts in the industry',
         'One API, all data sources',
-        'Improved ETAs & reliability'
+        'Push alerts to drivers',
+        'Standalone iOS & Android app'
       ],
       image: '/images/rideshare1.png',
       link: '/industries#rideshare'
