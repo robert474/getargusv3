@@ -256,7 +256,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Building2, Truck, Car, Scale, Shield, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Building2, Truck, Car, Shield, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Solutions() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -264,74 +264,74 @@ export default function Solutions() {
 
   const solutions = [
     {
-      icon: Building2,
-      title: 'Government',
-      subtitle: 'Smart Cities on the Path to Vision Zero',
-      description: 'Advanced technology solutions that deliver traffic intelligence and build smarter, safer cities. Real-time incident detection supports Vision Zero initiatives by identifying and responding to hazards before they escalate.',
+      icon: Car,
+      title: 'Navigation Apps',
+      subtitle: 'Fastest Incident Data for Better Routing',
+      description: 'Power your navigation with the industry\'s fastest traffic alerts. While competitors deliver data in 1-5 minutes, our CV-powered detection sends incidents in under 10 seconds—giving your users the edge to avoid congestion before it builds.',
       features: [
-        'Traffic intelligence & monitoring',
-        'Vision Zero pathway support',
-        'Smart city infrastructure',
-        'Real-time incident response'
+        'Sub-10 second incident alerts',
+        '6x faster than INRIX/TomTom/HERE',
+        'Aggregated multi-source data API',
+        'Real-time route optimization'
       ],
-      image: '/images/government1.png',
-      link: '/industries#government'
+      image: '/images/rideshare1.png',
+      link: '/developer/api'
     },
     {
       icon: Truck,
-      title: 'Fleet/Last Mile',
-      subtitle: 'Improving Deliveries & Reducing Costs',
-      description: '5-15% more deliveries per hour in urban areas with heavy congestion. Our real-time alerts optimize routing, reduce fuel spend, improve driver Hours of Service compliance, and increase delivery efficiency.',
+      title: 'Fleet Management',
+      subtitle: 'More Deliveries, Less Fuel, Safer Routes',
+      description: '5-15% more deliveries per hour in urban areas. Our aggregated traffic API combines CV camera detection, DOT sensors, and connected vehicle data to optimize routing, reduce fuel costs, and keep drivers on schedule.',
       features: [
         '5-15% more deliveries/hour',
-        'Reduce fuel spend',
-        'Improve driver HOS',
-        'Safer, less congested routing'
+        'Reduce fuel spend 10-20%',
+        'Improve driver HOS compliance',
+        'Single API for all traffic data'
       ],
       image: '/images/lastmile1.png',
       link: '/industries#fleet'
     },
     {
       icon: Car,
-      title: 'Ride Share/Mobility',
-      subtitle: 'Intelligent Routing with World\'s Fastest Alerts',
-      description: '5-15% more rides per hour in urban areas and heavy congestion. Comprehensive mobility intelligence for rideshare and transportation platforms powered by the fastest real-time traffic alerts available.',
+      title: 'Ride Share Platforms',
+      subtitle: 'More Rides Per Hour with Real-Time Intelligence',
+      description: '5-15% more rides per hour with the fastest incident alerts in the industry. Our unified API aggregates traffic cameras, DOT feeds, and connected vehicle data—one integration replaces multiple data providers.',
       features: [
         '5-15% more rides/hour',
-        'World\'s fastest traffic alerts',
-        'Dynamic route optimization',
+        'Fastest alerts in the industry',
+        'One API, all data sources',
         'Improved ETAs & reliability'
       ],
       image: '/images/rideshare1.png',
       link: '/industries#rideshare'
     },
     {
+      icon: Building2,
+      title: 'Smart Cities & DOTs',
+      subtitle: 'Vision Zero with Real-Time Detection',
+      description: 'Support Vision Zero initiatives with CV-powered incident detection. Identify crashes, stalls, and hazards in under 10 seconds—alerting traffic centers and emergency services before 911 calls arrive.',
+      features: [
+        'Sub-10 second detection',
+        'Automated incident alerts',
+        'Integration with existing systems',
+        'Vision Zero pathway support'
+      ],
+      image: '/images/government1.png',
+      link: '/industries#government'
+    },
+    {
       icon: Shield,
       title: 'InsurTech',
-      subtitle: 'Risk Assessment Revolutionized by Data',
-      description: '30% improvement in fraud detection. Reduce disputed liability and fraud with comprehensive accident archives. AI-powered analysis of traffic incidents provides insurers with objective evidence for faster, more accurate claims processing.',
+      subtitle: 'Faster Claims with Video Evidence',
+      description: '30% improvement in fraud detection. Access comprehensive accident archives with CV-detected incidents. AI-powered analysis provides objective evidence for faster, more accurate claims processing.',
       features: [
         '30% fraud detection improvement',
-        'Reduce disputed liability',
-        'Accident video archives',
+        'Instant incident video access',
+        'Objective evidence for claims',
         'Faster claims processing'
       ],
       image: '/images/insurtech.png',
       link: '/industries#insurtech'
-    },
-    {
-      icon: Scale,
-      title: 'Forensics',
-      subtitle: 'Digital Truth Through Intelligent Investigation',
-      description: 'Reduce investigation time by 60% with AI-powered analysis. Digital forensics and investigative intelligence tools that process terabytes of evidence automatically, finding critical footage across thousands of cameras in minutes.',
-      features: [
-        '60% faster investigations',
-        'AI-powered evidence analysis',
-        'Terabyte-scale processing',
-        'Multi-camera search'
-      ],
-      image: '/images/forensics1.png',
-      link: '/industries#forensics'
     }
   ];
 
@@ -360,13 +360,13 @@ export default function Solutions() {
         {/* Section Header - More compact on mobile */}
         <div className="text-center mb-10 md:mb-16">
           <span className="inline-block text-[#C9A23A] font-semibold text-sm uppercase tracking-wider mb-3 md:mb-4">
-            Industries We Serve
+            Built for Mobility
           </span>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4">
-            Intelligence for Every Stakeholder
+            Power Your Platform with the Fastest Traffic Data
           </h2>
           <p className="text-base md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
-            One platform delivering real-time alerts and forensic search across transportation, public safety, and commercial operations
+            Navigation apps, fleet management, and ride share platforms trust Argus AI for sub-10 second incident alerts and aggregated traffic intelligence
           </p>
         </div>
 

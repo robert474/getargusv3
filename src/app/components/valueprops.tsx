@@ -1,55 +1,121 @@
 'use client';
 
-import { Zap, Search, Users } from 'lucide-react';
+import { Zap, Layers, Eye, Clock } from 'lucide-react';
 
 export default function ValueProps() {
+  const competitors = [
+    { name: 'Argus AI', latency: '<10 sec', color: 'bg-[#C9A23A]', highlight: true },
+    { name: 'INRIX', latency: '1 min', color: 'bg-gray-400', highlight: false },
+    { name: 'TomTom', latency: '1 min', color: 'bg-gray-400', highlight: false },
+    { name: 'HERE', latency: '1-2 min', color: 'bg-gray-400', highlight: false },
+    { name: 'Azure Maps', latency: '5 min', color: 'bg-gray-400', highlight: false },
+    { name: 'Google/Waze', latency: 'Variable', color: 'bg-gray-400', highlight: false },
+  ];
+
   return (
     <section className="py-20 bg-gradient-to-b from-[#F2F5F9] to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
+          <span className="inline-block text-[#C9A23A] font-semibold text-sm uppercase tracking-wider mb-4">
+            Why Argus AI
+          </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-            One Platform, Three Game-Changing Capabilities
+            The Only Platform Combining CV + Aggregated Data
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Built to serve cities, emergency services, fleets, and investigators
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            We&apos;re the only traffic intelligence provider using computer vision on camera networks
+            while aggregating DOT feeds, connected vehicles, and sensor data into a single API.
           </p>
         </div>
 
         {/* Value Props Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-          {/* Real-Time Detection */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-            <div className="w-16 h-16 bg-gradient-to-br from-[#C9A23A] to-[#E7C873] rounded-2xl flex items-center justify-center mb-6 shadow-md">
-              <Zap className="w-8 h-8 text-white" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mb-20">
+          {/* Computer Vision */}
+          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div className="w-14 h-14 bg-gradient-to-br from-[#C9A23A] to-[#E7C873] rounded-xl flex items-center justify-center mb-5 shadow-md">
+              <Eye className="w-7 h-7 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-[#0F172A] mb-4">Real-Time Detection</h3>
-            <p className="text-gray-700 text-lg leading-relaxed">
-              Incidents detected in under 10 seconds, alerts delivered before 911 calls
+            <h3 className="text-xl font-bold text-[#0F172A] mb-3">Computer Vision</h3>
+            <p className="text-gray-600 leading-relaxed">
+              The only provider using CV on traffic cameras for instant incident detection
             </p>
           </div>
 
-          {/* Instant Forensic Search */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-            <div className="w-16 h-16 bg-gradient-to-br from-[#7FB7FF] to-[#A5CEFF] rounded-2xl flex items-center justify-center mb-6 shadow-md">
-              <Search className="w-8 h-8 text-white" />
+          {/* Aggregated Sources */}
+          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div className="w-14 h-14 bg-gradient-to-br from-[#7FB7FF] to-[#A5CEFF] rounded-xl flex items-center justify-center mb-5 shadow-md">
+              <Layers className="w-7 h-7 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-[#0F172A] mb-4">Instant Forensic Search</h3>
-            <p className="text-gray-700 text-lg leading-relaxed">
-              Find any incident across thousands of cameras in minutes, not weeks
+            <h3 className="text-xl font-bold text-[#0F172A] mb-3">Aggregated Data</h3>
+            <p className="text-gray-600 leading-relaxed">
+              DOT sensors, connected vehicles, probe data—all unified in one API
             </p>
           </div>
 
-          {/* Multi-Stakeholder Value */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-            <div className="w-16 h-16 bg-gradient-to-br from-[#233247] to-[#0F172A] rounded-2xl flex items-center justify-center mb-6 shadow-md">
-              <Users className="w-8 h-8 text-white" />
+          {/* Sub-10 Second Latency */}
+          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div className="w-14 h-14 bg-gradient-to-br from-[#233247] to-[#0F172A] rounded-xl flex items-center justify-center mb-5 shadow-md">
+              <Zap className="w-7 h-7 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-[#0F172A] mb-4">Multi-Stakeholder Value</h3>
-            <p className="text-gray-700 text-lg leading-relaxed">
-              One platform serving cities, PSAPs, fleets, and investigators
+            <h3 className="text-xl font-bold text-[#0F172A] mb-3">Sub-10 Sec Latency</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Fastest incident alerts in the industry—6x faster than competitors
             </p>
           </div>
+
+          {/* One API */}
+          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div className="w-14 h-14 bg-gradient-to-br from-[#10B981] to-[#34D399] rounded-xl flex items-center justify-center mb-5 shadow-md">
+              <Clock className="w-7 h-7 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-[#0F172A] mb-3">Single API</h3>
+            <p className="text-gray-600 leading-relaxed">
+              No more juggling multiple data providers—one integration, all sources
+            </p>
+          </div>
+        </div>
+
+        {/* Competitor Comparison */}
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3">
+              Incident Alert Latency Comparison
+            </h3>
+            <p className="text-gray-600">
+              When an accident occurs, seconds matter. See how we compare.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+            <div className="grid grid-cols-1 divide-y divide-gray-100">
+              {competitors.map((competitor, index) => (
+                <div
+                  key={index}
+                  className={`flex items-center justify-between p-5 ${competitor.highlight ? 'bg-[#0F172A]' : 'hover:bg-gray-50'} transition-colors`}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className={`w-3 h-3 rounded-full ${competitor.color}`}></div>
+                    <span className={`font-semibold text-lg ${competitor.highlight ? 'text-white' : 'text-[#0F172A]'}`}>
+                      {competitor.name}
+                    </span>
+                    {competitor.highlight && (
+                      <span className="bg-[#C9A23A] text-white text-xs font-bold px-2 py-1 rounded">
+                        FASTEST
+                      </span>
+                    )}
+                  </div>
+                  <div className={`font-bold text-xl ${competitor.highlight ? 'text-[#C9A23A]' : 'text-gray-500'}`}>
+                    {competitor.latency}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <p className="text-center text-sm text-gray-500 mt-6">
+            * Latency data based on publicly available documentation and industry benchmarks
+          </p>
         </div>
       </div>
     </section>

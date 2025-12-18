@@ -96,8 +96,16 @@
 'use client';
 
 import Image from 'next/image';
+import { Camera, Radio, Car, Wifi } from 'lucide-react';
 
 export default function Overview() {
+  const dataSources = [
+    { icon: Camera, label: 'Traffic Cameras', desc: 'CV-powered detection' },
+    { icon: Radio, label: 'DOT Sensors', desc: 'State & federal feeds' },
+    { icon: Car, label: 'Connected Vehicles', desc: 'OEM telematics' },
+    { icon: Wifi, label: 'Probe Data', desc: 'Mobile & GPS sources' },
+  ];
+
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,25 +115,41 @@ export default function Overview() {
             The Argus AI Difference
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6">
-            Real-Time Intelligence Meets Forensic Power
+            One API. Every Traffic Data Source. Real-Time.
           </h2>
         </div>
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
-          {/* Text Content - Reduced and focused */}
+          {/* Text Content */}
           <div className="space-y-5 lg:col-span-2">
             <p className="text-lg text-[#0F172A] leading-relaxed">
-              <strong>Computer vision detects crashes, stalls, and hazards in under 10 seconds</strong>—alerting emergency services, traffic centers, and drivers before 911 calls arrive.
+              <strong>We aggregate traffic data from every source</strong>—traffic cameras with computer vision, DOT sensor networks, connected vehicle feeds, and probe data—into a single, unified API.
             </p>
-            
+
             <p className="text-lg text-[#0F172A] leading-relaxed">
-              Our dual platform delivers real-time detection that saves lives plus instant forensic search across thousands of cameras.
+              While others rely on single data sources with 1-5 minute delays, our CV-powered cameras detect incidents in under 10 seconds—<strong>6x faster than INRIX, TomTom, or HERE</strong>.
             </p>
-            
-            <p className="text-lg font-semibold text-[#0F172A] leading-relaxed">
-              We don't just help you find what happened—we tell you the moment it happens.
+
+            <p className="text-lg font-semibold text-[#7FB7FF] leading-relaxed">
+              Stop juggling multiple traffic data providers. One integration. All sources. Fastest alerts.
             </p>
+
+            {/* Data Sources Mini Grid */}
+            <div className="grid grid-cols-2 gap-3 pt-4">
+              {dataSources.map((source, index) => {
+                const Icon = source.icon;
+                return (
+                  <div key={index} className="flex items-center gap-3 bg-[#F2F5F9] rounded-lg p-3">
+                    <Icon className="w-5 h-5 text-[#C9A23A]" />
+                    <div>
+                      <p className="font-semibold text-sm text-[#0F172A]">{source.label}</p>
+                      <p className="text-xs text-gray-500">{source.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           {/* Dashboard Image */}
