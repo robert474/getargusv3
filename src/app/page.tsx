@@ -1,6 +1,7 @@
 import Header from "./components/header";
 import Hero from "@/main/herohome";
 import Overview from "@/main/overview";
+import Detection from "./components/detection";
 import Solutions from "@/main/solutions";
 import ProductsPage from "@/main/products";
 import Footer from "./components/footer"
@@ -17,6 +18,7 @@ export default function Home() {
         <Header />
         <Hero />
         <Overview />
+        <Detection />
         <ValueProps />
         <Solutions />
         <ProductsPage />

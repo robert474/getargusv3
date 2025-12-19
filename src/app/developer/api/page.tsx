@@ -7,8 +7,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'API Documentation | Argus AI Traffic Intelligence',
-  description: 'Complete API documentation for Argus AI real-time traffic intelligence. RESTful endpoints for incident alerts, traffic data, route optimization, and historical analytics. Sub-10-second latency.',
-  keywords: 'traffic API documentation, incident detection API, real-time traffic API, route optimization API, traffic data endpoints, traffic intelligence API, navigation data API',
+  description: 'Complete API documentation for Argus AI real-time traffic intelligence. RESTful endpoints for incident alerts, traffic flow, volume data, and 9 detection types. Sub-10-second latency.',
+  keywords: 'traffic API documentation, incident detection API, real-time traffic API, traffic flow API, traffic volume API, traffic intelligence API, navigation data API',
   openGraph: {
     title: 'Argus AI API Documentation | Traffic Intelligence Endpoints',
     description: 'RESTful API for real-time traffic intelligence. Integrate incident alerts, traffic data, and route optimization with sub-10-second latency.',
@@ -89,8 +89,98 @@ export default function APIDocsPage() {
                 <div className="text-gray-600 text-sm">Uptime SLA</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#0F172A]">5</div>
-                <div className="text-gray-600 text-sm">Data Sources</div>
+                <div className="text-3xl font-bold text-[#0F172A]">9</div>
+                <div className="text-gray-600 text-sm">Detection Types</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Detection Types */}
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold text-[#0F172A] mb-4">What We Detect</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Others detect the symptoms (jams, congestion). We detect the <strong>incident</strong> that causes them—and forecast the impact before it happens.
+              </p>
+            </div>
+
+            {/* Detection Types Grid */}
+            <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-4 mb-12">
+              <div className="bg-[#F2F5F9] rounded-xl p-4 text-center">
+                <AlertTriangle className="w-8 h-8 mx-auto mb-2 text-red-500" />
+                <p className="text-xs font-medium text-[#0F172A]">Incidents & Crashes</p>
+              </div>
+              <div className="bg-[#F2F5F9] rounded-xl p-4 text-center">
+                <Database className="w-8 h-8 mx-auto mb-2 text-orange-500" />
+                <p className="text-xs font-medium text-[#0F172A]">Congestion</p>
+              </div>
+              <div className="bg-[#F2F5F9] rounded-xl p-4 text-center">
+                <Clock className="w-8 h-8 mx-auto mb-2 text-yellow-500" />
+                <p className="text-xs font-medium text-[#0F172A]">Traffic Jams</p>
+              </div>
+              <div className="bg-[#F2F5F9] rounded-xl p-4 text-center">
+                <Zap className="w-8 h-8 mx-auto mb-2 text-red-600" />
+                <p className="text-xs font-medium text-[#0F172A]">Emergency Vehicles</p>
+              </div>
+              <div className="bg-[#F2F5F9] rounded-xl p-4 text-center">
+                <Code className="w-8 h-8 mx-auto mb-2 text-gray-500" />
+                <p className="text-xs font-medium text-[#0F172A]">Disabled Vehicles</p>
+              </div>
+              <div className="bg-[#F2F5F9] rounded-xl p-4 text-center">
+                <Shield className="w-8 h-8 mx-auto mb-2 text-blue-500" />
+                <p className="text-xs font-medium text-[#0F172A]">First Responders</p>
+              </div>
+              <div className="bg-[#F2F5F9] rounded-xl p-4 text-center">
+                <AlertTriangle className="w-8 h-8 mx-auto mb-2 text-orange-400" />
+                <p className="text-xs font-medium text-[#0F172A]">Traffic Stops</p>
+              </div>
+              <div className="bg-[#F2F5F9] rounded-xl p-4 text-center">
+                <Database className="w-8 h-8 mx-auto mb-2 text-yellow-600" />
+                <p className="text-xs font-medium text-[#0F172A]">Construction</p>
+              </div>
+              <div className="bg-[#F2F5F9] rounded-xl p-4 text-center">
+                <CheckCircle className="w-8 h-8 mx-auto mb-2 text-green-500" />
+                <p className="text-xs font-medium text-[#0F172A]">Pedestrians</p>
+              </div>
+            </div>
+
+            {/* Current & Coming Soon */}
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="bg-[#F2F5F9] rounded-xl p-6">
+                <h3 className="text-xl font-bold text-[#0F172A] mb-4">Current Data Available</h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    Real-time incident alerts (all 9 types)
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    Traffic flow data
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    Traffic volume counts
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    Aggregated multi-source intelligence
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-[#C9A23A]/20 to-[#C9A23A]/5 rounded-xl p-6 border border-[#C9A23A]/30">
+                <div className="flex items-center gap-2 mb-4">
+                  <h3 className="text-xl font-bold text-[#0F172A]">Predictive Flow</h3>
+                  <span className="bg-[#C9A23A] text-white text-xs font-bold px-2 py-1 rounded">COMING SOON</span>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  Vision-based predictive traffic flow—anticipating conditions in 10-minute intervals, up to 90 minutes ahead.
+                </p>
+                <p className="text-sm text-gray-600 italic">
+                  No one else predicts because they don&apos;t see what&apos;s happening. We do.
+                </p>
               </div>
             </div>
           </div>
@@ -307,7 +397,7 @@ const incidents = await argusClient.get('/incidents', {
                         <td className="py-3 px-4"><code className="text-[#C9A23A]">types</code></td>
                         <td className="py-3 px-4 text-gray-600">array</td>
                         <td className="py-3 px-4"><span className="text-gray-500">No</span></td>
-                        <td className="py-3 px-4 text-gray-600">Filter by incident types: accident, congestion, road_closure, construction, hazard, weather</td>
+                        <td className="py-3 px-4 text-gray-600">Filter by incident types: crash, congestion, jam, emergency_vehicle, disabled_vehicle, first_responder, traffic_stop, construction, pedestrian</td>
                       </tr>
                       <tr className="border-b border-gray-100">
                         <td className="py-3 px-4"><code className="text-[#C9A23A]">severity</code></td>
@@ -482,48 +572,65 @@ const incidents = await argusClient.get('/incidents', {
               </div>
             </div>
 
-            {/* Route Optimization Endpoint */}
+            {/* Traffic Volume Endpoint */}
             <div className="bg-white rounded-xl overflow-hidden mb-8 shadow-sm">
               <div className="px-6 py-4 bg-[#0F172A] flex items-center gap-4">
-                <span className="px-3 py-1 bg-blue-500 text-white text-sm font-bold rounded">POST</span>
-                <code className="text-white font-mono">/v1/routes/optimize</code>
+                <span className="px-3 py-1 bg-green-500 text-white text-sm font-bold rounded">GET</span>
+                <code className="text-white font-mono">/v1/traffic/volume</code>
               </div>
               <div className="p-6">
                 <p className="text-gray-700 mb-6">
-                  Calculate the optimal route between two points, accounting for current incidents and real-time
-                  traffic conditions. Returns multiple route alternatives with ETA comparisons.
+                  Get real-time traffic volume counts for road segments. Returns vehicle counts detected via CV-powered cameras and aggregated sensor data.
                 </p>
 
-                <h4 className="font-bold text-[#0F172A] mb-3">Request Body</h4>
-                <div className="bg-[#0F172A] rounded-lg p-4 overflow-x-auto mb-6">
+                <h4 className="font-bold text-[#0F172A] mb-3">Request Parameters</h4>
+                <div className="overflow-x-auto mb-6">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-[#F2F5F9]">
+                        <th className="text-left py-3 px-4 font-semibold text-[#0F172A]">Parameter</th>
+                        <th className="text-left py-3 px-4 font-semibold text-[#0F172A]">Type</th>
+                        <th className="text-left py-3 px-4 font-semibold text-[#0F172A]">Required</th>
+                        <th className="text-left py-3 px-4 font-semibold text-[#0F172A]">Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-100">
+                        <td className="py-3 px-4"><code className="text-[#C9A23A]">bbox</code></td>
+                        <td className="py-3 px-4 text-gray-600">string</td>
+                        <td className="py-3 px-4"><span className="text-green-600 font-medium">Yes</span></td>
+                        <td className="py-3 px-4 text-gray-600">Bounding box: min_lng,min_lat,max_lng,max_lat</td>
+                      </tr>
+                      <tr className="border-b border-gray-100 bg-[#F2F5F9]/50">
+                        <td className="py-3 px-4"><code className="text-[#C9A23A]">interval</code></td>
+                        <td className="py-3 px-4 text-gray-600">string</td>
+                        <td className="py-3 px-4"><span className="text-gray-500">No</span></td>
+                        <td className="py-3 px-4 text-gray-600">Aggregation interval: 5min, 15min, 1hour (default: 15min)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h4 className="font-bold text-[#0F172A] mb-3">Response Example</h4>
+                <div className="bg-[#0F172A] rounded-lg p-4 overflow-x-auto">
                   <pre className="text-sm text-gray-300">
                     <code>{`{
-  "origin": {
-    "lat": 40.7128,
-    "lng": -74.0060
-  },
-  "destination": {
-    "lat": 40.7580,
-    "lng": -73.9855
-  },
-  "waypoints": [
-    { "lat": 40.7484, "lng": -73.9857 }
-  ],
-  "avoid": ["tolls", "highways"],
-  "depart_at": "2024-12-15T16:00:00Z",
-  "alternatives": 3
+  "success": true,
+  "data": {
+    "segments": [
+      {
+        "segment_id": "seg_i95_n_42_45",
+        "road_name": "I-95 Northbound",
+        "volume_per_hour": 2450,
+        "vehicle_count_15min": 612,
+        "timestamp": "2024-12-15T14:30:00Z",
+        "confidence": 0.94
+      }
+    ]
+  }
 }`}</code>
                   </pre>
                 </div>
-
-                <h4 className="font-bold text-[#0F172A] mb-3">Response Fields</h4>
-                <ul className="space-y-2 text-gray-700">
-                  <li><code className="text-[#C9A23A]">routes</code> - Array of route alternatives sorted by ETA</li>
-                  <li><code className="text-[#C9A23A]">routes[].distance_km</code> - Total route distance</li>
-                  <li><code className="text-[#C9A23A]">routes[].duration_minutes</code> - Estimated travel time</li>
-                  <li><code className="text-[#C9A23A]">routes[].incidents_on_route</code> - Incidents affecting this route</li>
-                  <li><code className="text-[#C9A23A]">routes[].polyline</code> - Encoded route geometry</li>
-                </ul>
               </div>
             </div>
 
