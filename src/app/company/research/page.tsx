@@ -18,11 +18,11 @@ import {
 export default function ResearchPage() {
   const competitors = [
     { name: 'Argus AI', latency: '<10 sec', color: 'bg-[#C9A23A]', highlight: true, footnote: null, description: 'CV-powered real-time detection' },
-    { name: 'Waze', latency: '~10 min', color: 'bg-gray-400', highlight: false, footnote: '1', description: '9.8 min faster than INRIX' },
-    { name: 'INRIX', latency: '~6+ min', color: 'bg-gray-400', highlight: false, footnote: '2', description: 'Documented latency from loop detectors' },
-    { name: 'TomTom', latency: '30s + delay', color: 'bg-gray-400', highlight: false, footnote: '3', description: '30s processing cycle + collection' },
-    { name: 'Google Maps', latency: 'Variable', color: 'bg-gray-400', highlight: false, footnote: '4', description: 'Minutes to 30+ min historically' },
-    { name: 'HERE', latency: '1-2 min', color: 'bg-gray-400', highlight: false, footnote: '5', description: 'API refresh intervals' },
+    { name: 'INRIX', latency: '~6+ min', color: 'bg-gray-400', highlight: false, footnote: '1', description: 'Documented latency from loop detectors' },
+    { name: 'TomTom', latency: '~16 min', color: 'bg-gray-400', highlight: false, footnote: '2', description: 'Internal testing vs. Argus AI' },
+    { name: 'Waze', latency: '~10 min', color: 'bg-gray-400', highlight: false, footnote: '3', description: '9.8 min faster than INRIX' },
+    { name: 'HERE', latency: 'Variable', color: 'bg-gray-400', highlight: false, footnote: '4', description: 'Untested/undocumented' },
+    { name: 'Google Maps', latency: 'Variable', color: 'bg-gray-400', highlight: false, footnote: '5', description: 'Untested/undocumented' },
   ];
 
   return (
@@ -336,21 +336,21 @@ export default function ResearchPage() {
               <p className="text-sm text-gray-600 font-semibold mb-4">References:</p>
               <div className="text-xs text-gray-500 space-y-3">
                 <p>
-                  <strong>[1]</strong> Amin-Naseri, M., et al. (2018). &quot;Evaluating the Reliability, Coverage, and Added Value of Crowdsourced Traffic Incident Reports from Waze.&quot;
-                  <em> Transportation Research Record</em>, 2672(43), 34–43. Waze detected incidents 9.8 minutes faster than INRIX.
-                </p>
-                <p>
-                  <strong>[2]</strong> Kim and Coifman (2014). &quot;Comparing INRIX speed data against concurrent loop detector stations.&quot;
+                  <strong>[1]</strong> Kim and Coifman (2014). &quot;Comparing INRIX speed data against concurrent loop detector stations.&quot;
                   <em> Transportation Research Record</em>. INRIX exhibited ~6 minute latency vs. loop detectors.
                 </p>
                 <p>
-                  <strong>[3]</strong> TomTom Technical Documentation (2023-2025). 30-second processing cycle for traffic flow updates, plus data collection delays.
+                  <strong>[2]</strong> Internal testing (2024). TomTom incident detection latency measured at ~16 minutes behind Argus AI.
                 </p>
                 <p>
-                  <strong>[4]</strong> Historical research indicates Google Maps latency varying from minutes to 30+ minutes depending on traffic density and user reports.
+                  <strong>[3]</strong> Amin-Naseri, M., et al. (2018). &quot;Evaluating the Reliability, Coverage, and Added Value of Crowdsourced Traffic Incident Reports from Waze.&quot;
+                  <em> Transportation Research Record</em>, 2672(43), 34–43. Waze detected incidents 9.8 minutes faster than INRIX.
                 </p>
                 <p>
-                  <strong>[5]</strong> HERE Traffic API Developer Guide. 1-2 minute refresh intervals per official documentation.
+                  <strong>[4]</strong> HERE: Untested/undocumented incident detection latency.
+                </p>
+                <p>
+                  <strong>[5]</strong> Google Maps: Untested/undocumented incident detection latency.
                 </p>
               </div>
             </div>
