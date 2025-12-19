@@ -4,12 +4,12 @@ import { Zap, Layers, Eye, Clock } from 'lucide-react';
 
 export default function ValueProps() {
   const competitors = [
-    { name: 'Argus AI', latency: '<10 sec', color: 'bg-[#C9A23A]', highlight: true },
-    { name: 'INRIX', latency: '1 min', color: 'bg-gray-400', highlight: false },
-    { name: 'TomTom', latency: '1 min', color: 'bg-gray-400', highlight: false },
-    { name: 'HERE', latency: '1-2 min', color: 'bg-gray-400', highlight: false },
-    { name: 'Azure Maps', latency: '5 min', color: 'bg-gray-400', highlight: false },
-    { name: 'Google/Waze', latency: 'Variable', color: 'bg-gray-400', highlight: false },
+    { name: 'Argus AI', latency: '<10 sec', color: 'bg-[#C9A23A]', highlight: true, footnote: null },
+    { name: 'INRIX', latency: '1 min', color: 'bg-gray-400', highlight: false, footnote: '1' },
+    { name: 'TomTom', latency: '1 min', color: 'bg-gray-400', highlight: false, footnote: '2' },
+    { name: 'HERE', latency: '1-2 min', color: 'bg-gray-400', highlight: false, footnote: '3' },
+    { name: 'Azure Maps', latency: '5 min', color: 'bg-gray-400', highlight: false, footnote: '4' },
+    { name: 'Google/Waze', latency: 'Variable', color: 'bg-gray-400', highlight: false, footnote: '5' },
   ];
 
   return (
@@ -80,10 +80,10 @@ export default function ValueProps() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
             <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3">
-              Incident Alert Latency Comparison
+              Traffic Data Refresh Rates
             </h3>
             <p className="text-gray-600">
-              When an accident occurs, seconds matter. See how we compare.
+              How quickly providers update their traffic data feeds. Faster refresh = faster incident awareness.
             </p>
           </div>
 
@@ -107,15 +107,29 @@ export default function ValueProps() {
                   </div>
                   <div className={`font-bold text-xl ${competitor.highlight ? 'text-[#C9A23A]' : 'text-gray-500'}`}>
                     {competitor.latency}
+                    {competitor.footnote && (
+                      <sup className="text-xs ml-1 text-gray-400">[{competitor.footnote}]</sup>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <p className="text-center text-sm text-gray-500 mt-6">
-            * Latency data based on publicly available documentation and industry benchmarks
-          </p>
+          <div className="mt-8 pt-6 border-t border-gray-200">
+            <p className="text-xs text-gray-500 mb-3 font-semibold">Sources:</p>
+            <div className="text-xs text-gray-400 space-y-1">
+              <p>[1] INRIX Traffic API: ~1 minute refresh per <a href="https://docs.inrix.com/traffic/incidents/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">API documentation</a></p>
+              <p>[2] TomTom Traffic Flow: ~1 minute refresh per <a href="https://developer.tomtom.com/traffic-api/documentation/product-information/introduction" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">developer docs</a></p>
+              <p>[3] HERE Traffic API: 1-2 minute refresh per <a href="https://www.here.com/docs/bundle/traffic-api-developer-guide/page/topics/quick-start.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">developer guide</a></p>
+              <p>[4] Azure Maps Traffic: ~5 minute refresh per <a href="https://learn.microsoft.com/en-us/azure/azure-maps/how-to-request-traffic-data" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">Microsoft Learn</a></p>
+              <p>[5] Google/Waze: Crowdsourced, variable latency based on user density and report frequency</p>
+            </div>
+            <p className="text-xs text-gray-400 mt-4 italic">
+              Refresh rates indicate how frequently traffic data updates are made available through each provider&apos;s API.
+              Actual incident detection time may vary based on data source (probe data, sensors, user reports).
+            </p>
+          </div>
         </div>
       </div>
     </section>
