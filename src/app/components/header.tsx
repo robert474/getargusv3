@@ -623,6 +623,13 @@ export default function Header() {
                     >
                       Blog
                     </Link>
+                    <Link
+                      href="/company/research"
+                      onClick={() => setIsCompanyOpen(false)}
+                      className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
+                    >
+                      Research & Evidence
+                    </Link>
                     <div className="border-t border-gray-100 mt-2 pt-2">
                       <Link
                         href="/privacy-policy"
@@ -734,6 +741,13 @@ export default function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               Blog
+            </Link>
+            <Link
+              href="/company/research"
+              className="block px-4 py-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Research
             </Link>
             <span className="block px-4 py-3 text-gray-400 rounded-md font-medium">
               Performance <span className="text-xs bg-gray-200 text-gray-500 px-1.5 py-0.5 rounded-full ml-1">Soon</span>
