@@ -19,13 +19,23 @@ export const metadata: Metadata = {
 // Blog posts data - in production this would come from a CMS or database
 const blogPosts = [
   {
+    slug: 'autonomous-vehicles-need-faster-traffic-data',
+    title: 'Autonomous Vehicles Need Faster Traffic Data: Building the Neural Network for Roads',
+    excerpt: 'The AV market is exploding toward $4.5 trillion. But vehicles can only be as smart as their data infrastructure. We need to build the data rail first.',
+    date: '2024-12-20',
+    readTime: '8 min read',
+    category: 'Industry Perspective',
+    featured: true,
+    image: '/images/cars2.png',
+  },
+  {
     slug: 'how-engineers-solve-navigation-routing-challenges',
     title: 'How Engineers Solve Navigation and Routing Challenges with Traffic Data',
     excerpt: 'From slow rerouting to inaccurate ETAs, navigation applications face common challenges. Here\'s how engineering teams solve them with better traffic data integration.',
     date: '2024-12-17',
     readTime: '10 min read',
     category: 'Engineering',
-    featured: true,
+    featured: false,
     image: '/images/incidentdashboard.png',
   },
   {
