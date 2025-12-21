@@ -21,11 +21,10 @@ export default function ValueProps() {
             Why Argus AI
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-            The Only Platform Combining CV + Aggregated Data
+            The real-time traffic truth layer
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We&apos;re the only traffic intelligence provider using computer vision on camera networks
-            while aggregating DOT feeds, connected vehicles, and sensor data into a single API.
+            We&apos;re the only provider using computer vision on DOT cameras to detect crashes and slowdowns in under 10 seconds—then pushing those alerts to fleets and nav platforms before crowd-sourced apps even know there&apos;s a problem.
           </p>
         </div>
 
@@ -83,7 +82,7 @@ export default function ValueProps() {
               Incident Detection Latency
             </h3>
             <p className="text-gray-600">
-              Based on peer-reviewed research and official documentation. Faster detection = safer roads.
+              Based on peer-reviewed research. Faster detection = safer drivers, fewer delays.
             </p>
           </div>
 

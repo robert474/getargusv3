@@ -142,21 +142,15 @@ export default function Hero() {
       <div className="relative h-full flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
-            {/* Main Heading - Scales up on larger screens */}
+            {/* Main Heading */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-4 lg:mb-6 leading-tight">
-              Aggregated Traffic Intelligence{' '}
-              <span className="text-[#C9A23A]">in Under 10 Seconds</span>
+              Sub-10-second traffic data rail{' '}
+              <span className="text-[#C9A23A]">for fleets and navigation platforms</span>
             </h1>
 
-            {/* Description - Scales with screen size */}
-            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#F2F5F9] font-medium leading-relaxed mb-3 lg:mb-4">
-              The only traffic data platform combining computer vision on cameras
-              with aggregated DOT, connected vehicle, and sensor data—pushing real-time alerts to drivers.
-            </p>
-
-            {/* Target Audience - Scales proportionally */}
-            <p className="text-base md:text-lg lg:text-xl xl:text-2xl text-[#7FB7FF] font-semibold mb-8 lg:mb-10">
-              Built for Navigation Apps • Fleet Management • Ride Share Platforms
+            {/* Subhead - Single clear sentence */}
+            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#F2F5F9] font-medium leading-relaxed mb-8 lg:mb-10">
+              Argus AI turns DOT cameras into real-time incident alerts so fleets and nav apps can reroute drivers before traffic apps even notice a problem.
             </p>
 
             {/* CTA Buttons */}
@@ -165,13 +159,13 @@ export default function Hero() {
                 href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
                 className="inline-block bg-[#7FB7FF] text-[#0F172A] px-8 py-3 lg:px-10 lg:py-4 xl:px-12 xl:py-5 rounded-lg text-lg lg:text-xl xl:text-2xl font-semibold hover:bg-[#A5CEFF] transition-colors duration-200 shadow-lg text-center"
               >
-                Get API Access
+                Book a Fleet Demo
               </a>
               <a
-                href="/developer/api"
+                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
                 className="inline-block border-2 border-white text-white px-8 py-3 lg:px-10 lg:py-4 xl:px-12 xl:py-5 rounded-lg text-lg lg:text-xl xl:text-2xl font-semibold hover:bg-white/10 transition-colors duration-200 text-center"
               >
-                View Documentation
+                Talk to the Founder
               </a>
             </div>
           </div>

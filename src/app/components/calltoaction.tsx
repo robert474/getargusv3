@@ -19,10 +19,10 @@ const CallToAction = () => {
             Ready to Get Started?
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Start with Argus AI Today
+            Run a pilot with your fleet
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Join leading cities, emergency services, and fleet operators who are already using AI-powered traffic intelligence to save lives and optimize operations.
+            See how sub-10-second crash and slowdown alerts can protect your drivers, reduce fuel costs, and keep your fleet moving.
           </p>
         </div>
 
@@ -32,9 +32,9 @@ const CallToAction = () => {
             <div className="w-12 h-12 bg-[#0F172A] border-2 border-[#C9A23A] rounded-lg flex items-center justify-center mb-4">
               <Clock className="w-6 h-6 text-[#C9A23A]" />
             </div>
-            <h3 className="text-lg font-bold text-white mb-2">Fast Implementation</h3>
+            <h3 className="text-lg font-bold text-white mb-2">Fast Integration</h3>
             <p className="text-gray-300 text-sm">
-              Deploy in weeks, not months. Integrate seamlessly with your existing infrastructure.
+              One API, one integration. Works with Samsara, Motive, Geotab, Platform Science, and more.
             </p>
           </div>
 
@@ -42,9 +42,9 @@ const CallToAction = () => {
             <div className="w-12 h-12 bg-[#0F172A] border-2 border-[#C9A23A] rounded-lg flex items-center justify-center mb-4">
               <TrendingUp className="w-6 h-6 text-[#C9A23A]" />
             </div>
-            <h3 className="text-lg font-bold text-white mb-2">Proven ROI</h3>
+            <h3 className="text-lg font-bold text-white mb-2">Proven Results</h3>
             <p className="text-gray-300 text-sm">
-              See measurable results in emergency response times, traffic flow, and operational costs.
+              Initial pilots cut response times by up to 20 minutes. Real-time alerts mean fewer delays.
             </p>
           </div>
 
@@ -52,41 +52,40 @@ const CallToAction = () => {
             <div className="w-12 h-12 bg-[#0F172A] border-2 border-[#C9A23A] rounded-lg flex items-center justify-center mb-4">
               <CheckCircle className="w-6 h-6 text-[#C9A23A]" />
             </div>
-            <h3 className="text-lg font-bold text-white mb-2">Expert Support</h3>
+            <h3 className="text-lg font-bold text-white mb-2">Founder-Led Support</h3>
             <p className="text-gray-300 text-sm">
-              Dedicated team to ensure successful deployment and ongoing optimization.
+              Direct access to leadership during your pilot. We succeed when you succeed.
             </p>
           </div>
         </div>
 
-        {/* CTA Buttons - Consistent light blue for primary action */}
+        {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
             className="group inline-flex items-center px-8 py-4 bg-[#7FB7FF] hover:bg-[#A5CEFF] text-[#0F172A] rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
-            Schedule Your Demo
+            Book a Fleet Demo
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
-            href="/solutions"
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
             className="inline-flex items-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-xl font-semibold transition-all duration-300 border border-white/20 backdrop-blur-sm"
           >
-            Explore Solutions
+            Talk to the Founder
           </a>
         </div>
 
         {/* Trust Indicators */}
         <div className="mt-12 pt-8 border-t border-white/10 text-center">
           <p className="text-gray-400 text-sm mb-4">
-            Trusted by municipalities, emergency services, and transportation leaders
+            Built for the mobility stack
           </p>
-      <div className="text-[#F2F5F9] flex flex-wrap justify-center gap-8 items-center">
-  <div className="font-semibold">Vision Zero Cities</div>
-  <div className="font-semibold">PSAPs & 911 Centers</div>
-  <div className="font-semibold">Fleet Operators</div>
-  <div className="font-semibold">Law Enforcement</div>
-</div>
+          <div className="text-[#F2F5F9] flex flex-wrap justify-center gap-8 items-center">
+            <div className="font-semibold">Fleet Operators</div>
+            <div className="font-semibold">Nav Platforms</div>
+            <div className="font-semibold">In-cab / Telematics</div>
+          </div>
         </div>
       </div>
     </section>

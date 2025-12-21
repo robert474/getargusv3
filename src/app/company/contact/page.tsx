@@ -11,7 +11,9 @@ export default function ContactPage() {
     name: '',
     email: '',
     company: '',
-    interest: '',
+    role: '',
+    fleetSize: '',
+    currentTools: '',
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -32,7 +34,7 @@ export default function ContactPage() {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', company: '', interest: '', message: '' });
+        setFormData({ name: '', email: '', company: '', role: '', fleetSize: '', currentTools: '', message: '' });
       } else {
         const data = await response.json();
         setErrorMessage(data.error || 'Unknown error');
@@ -60,14 +62,14 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl">
               <span className="inline-block text-[#C9A23A] font-semibold text-sm uppercase tracking-wider mb-4">
-                Contact Us
+                Fleet Pilots
               </span>
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Let&apos;s Talk Traffic Intelligence
+                Interested in running a pilot?
               </h1>
               <p className="text-xl text-gray-300">
-                Whether you&apos;re exploring API integration, discussing partnership opportunities,
-                or have questions about our platform, we&apos;re here to help.
+                Tell us about your fleet and current tools. We&apos;ll show you how sub-10-second
+                crash and slowdown alerts can protect your drivers and assets.
               </p>
             </div>
           </div>
@@ -79,7 +81,7 @@ export default function ContactPage() {
             <div className="grid lg:grid-cols-2 gap-16">
               {/* Contact Form */}
               <div>
-                <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Send Us a Message</h2>
+                <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Tell us about your fleet</h2>
 
                 {status === 'success' ? (
                   <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
@@ -147,63 +149,114 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                        Company
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors bg-white text-gray-900"
-                        placeholder="Your company name"
-                      />
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                          Company *
+                        </label>
+                        <input
+                          type="text"
+                          id="company"
+                          name="company"
+                          required
+                          value={formData.company}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors bg-white text-gray-900"
+                          placeholder="Your company name"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-2">
+                          Your Role *
+                        </label>
+                        <select
+                          id="role"
+                          name="role"
+                          required
+                          value={formData.role}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors bg-white text-gray-900"
+                        >
+                          <option value="">Select your role</option>
+                          <option value="fleet-manager">Fleet Manager</option>
+                          <option value="operations">Operations / Logistics</option>
+                          <option value="safety">Safety Director</option>
+                          <option value="engineering">Engineering / Product</option>
+                          <option value="executive">Executive / Owner</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
                     </div>
 
-                    <div>
-                      <label htmlFor="interest" className="block text-sm font-medium text-gray-700 mb-2">
-                        I&apos;m interested in
-                      </label>
-                      <select
-                        id="interest"
-                        name="interest"
-                        value={formData.interest}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors bg-white text-gray-900"
-                      >
-                        <option value="">Select an option</option>
-                        <option value="api">API Integration</option>
-                        <option value="enterprise">Enterprise Solutions</option>
-                        <option value="partnership">Partnership Opportunities</option>
-                        <option value="data-provider">Becoming a Data Provider</option>
-                        <option value="general">General Inquiry</option>
-                      </select>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="fleetSize" className="block text-sm font-medium text-gray-700 mb-2">
+                          Fleet Size *
+                        </label>
+                        <select
+                          id="fleetSize"
+                          name="fleetSize"
+                          required
+                          value={formData.fleetSize}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors bg-white text-gray-900"
+                        >
+                          <option value="">Select fleet size</option>
+                          <option value="1-50">1–50 vehicles</option>
+                          <option value="51-200">51–200 vehicles</option>
+                          <option value="201-500">201–500 vehicles</option>
+                          <option value="501-1000">501–1,000 vehicles</option>
+                          <option value="1000+">1,000+ vehicles</option>
+                          <option value="nav-platform">Nav platform (not a fleet)</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label htmlFor="currentTools" className="block text-sm font-medium text-gray-700 mb-2">
+                          Current Tools *
+                        </label>
+                        <select
+                          id="currentTools"
+                          name="currentTools"
+                          required
+                          value={formData.currentTools}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors bg-white text-gray-900"
+                        >
+                          <option value="">Select current telematics</option>
+                          <option value="samsara">Samsara</option>
+                          <option value="motive">Motive (KeepTruckin)</option>
+                          <option value="geotab">Geotab</option>
+                          <option value="platform-science">Platform Science</option>
+                          <option value="omnitracs">Omnitracs</option>
+                          <option value="trimble">Trimble</option>
+                          <option value="verizon-connect">Verizon Connect</option>
+                          <option value="other">Other</option>
+                          <option value="none">None / Building our own</option>
+                        </select>
+                      </div>
                     </div>
 
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                        Message *
+                        Anything else we should know?
                       </label>
                       <textarea
                         id="message"
                         name="message"
-                        required
-                        rows={5}
+                        rows={4}
                         value={formData.message}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent transition-colors resize-none bg-white text-gray-900"
-                        placeholder="Tell us about your use case or questions..."
+                        placeholder="Tell us about your use case, routes, or specific challenges..."
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={status === 'submitting'}
-                      className="w-full px-6 py-3 bg-[#C9A23A] text-white font-semibold rounded-lg hover:bg-[#E7C873] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full px-6 py-3 bg-[#7FB7FF] text-[#0F172A] font-semibold rounded-lg hover:bg-[#A5CEFF] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {status === 'submitting' ? 'Sending...' : 'Send Message'}
+                      {status === 'submitting' ? 'Sending...' : 'Request a Pilot'}
                     </button>
                   </form>
                 )}
