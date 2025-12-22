@@ -53,7 +53,7 @@ const CallToAction = () => {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all text-[#0F172A]"
                   placeholder="Your name"
                 />
               </div>
@@ -65,7 +65,7 @@ const CallToAction = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all text-[#0F172A]"
                   placeholder="you@company.com"
                 />
               </div>
@@ -76,7 +76,7 @@ const CallToAction = () => {
                 <select
                   id="fleet-size"
                   name="fleet-size"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all bg-white"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all bg-white text-[#0F172A]"
                 >
                   <option value="">Select fleet size</option>
                   <option value="10-50">10-50 vehicles</option>
@@ -93,7 +93,7 @@ const CallToAction = () => {
                 <select
                   id="telematics"
                   name="telematics"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all bg-white"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all bg-white text-[#0F172A]"
                 >
                   <option value="">Select your provider</option>
                   <option value="platform-science">Platform Science</option>
