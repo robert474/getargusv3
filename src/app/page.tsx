@@ -1,5 +1,6 @@
 import Header from "./components/header";
 import Hero from "@/main/herohome";
+import ProductShowcase from "./components/productshowcase";
 import WhoItsFor from "./components/whoitsfor";
 import ProofStats from "./components/proofstats";
 import ValueProps from "./components/valueprops";
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Header />
       <Hero />
+      <ProductShowcase />
       <WhoItsFor />
       <ProofStats />
       <ValueProps />
