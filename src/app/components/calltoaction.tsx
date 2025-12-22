@@ -19,27 +19,21 @@ const CallToAction = () => {
     setErrorMessage('');
 
     try {
-      const message = `Fleet Size: ${formData.fleetSize || 'Not specified'}\nCurrent Telematics: ${formData.telematics || 'Not specified'}\n\nInterested in a demo.`;
-
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://script.google.com/a/macros/trafficdatagroup.com/s/AKfycbzI3zhxvdNVq0GAhW9uxVlBPbpAYkbf7chz-p-E7CPZL-f-NiDc3K-uTZawm4jHZ9__CQ/exec', {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          company: formData.email.split('@')[1]?.split('.')[0] || '',
-          interest: formData.fleetSize === 'api' ? 'API Access' : 'Fleet Demo',
-          message: message,
+          fleetSize: formData.fleetSize,
+          telematics: formData.telematics,
         }),
       });
 
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || 'Failed to submit form');
-      }
-
+      // With no-cors mode, we can't read the response, so we assume success
       setStatus('success');
       setFormData({ name: '', email: '', fleetSize: '', telematics: '' });
     } catch (error) {
