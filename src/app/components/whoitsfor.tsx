@@ -105,10 +105,10 @@ export default function WhoItsFor() {
                 </li>
               </ul>
               <a
-                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+                href="/developer/api"
                 className="inline-flex items-center justify-center px-6 py-3 bg-[#0F172A] hover:bg-[#1e293b] text-white rounded-lg font-semibold transition-colors w-full sm:w-auto"
               >
-                Request API Access
+                See API Docs
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </div>

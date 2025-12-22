@@ -30,10 +30,10 @@ export default function ProductShowcase() {
                 Sub-10s incident detection for your routing engine. One API, 9 detection types.
               </p>
               <a
-                href="#api-access"
+                href="/developer/api"
                 className="inline-flex items-center text-[#7FB7FF] font-semibold hover:text-[#A5CEFF] transition-colors"
               >
-                Request API Access
+                See API Docs
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </div>

@@ -162,10 +162,10 @@ export default function Hero() {
                 Get the Fleet App
               </a>
               <a
-                href="#api-access"
+                href="/developer/api"
                 className="inline-block border-2 border-white text-white px-8 py-3 lg:px-10 lg:py-4 xl:px-12 xl:py-5 rounded-lg text-lg lg:text-xl xl:text-2xl font-semibold hover:bg-white/10 transition-colors duration-200 text-center"
               >
-                Request API Access
+                See API Docs
               </a>
             </div>
           </div>
