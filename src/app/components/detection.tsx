@@ -31,13 +31,13 @@ export default function Detection() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <span className="inline-block text-[#C9A23A] font-semibold text-sm uppercase tracking-wider mb-3">
-            What We Detect
+            How We&apos;re Different
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            We Detect the Incident. Others Detect the Symptom.
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <span className="text-[#C9A23A]">&lt;10 seconds.</span> We detect the incident.
           </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Traffic jams and congestion are symptoms. We see the incident that causes them—in under 10 seconds—and forecast the impact before it happens.
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+            Others detect the symptom—traffic jams, congestion, slowdowns. We see the crash, stall, or hazard that causes them and alert you before anyone else knows.
           </p>
         </div>
 
@@ -57,41 +57,34 @@ export default function Detection() {
           })}
         </div>
 
-        {/* Current Data Types */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-            <h3 className="text-xl font-bold text-white mb-3">Current Data</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-[#C9A23A] rounded-full"></span>
-                Real-time incident alerts
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-[#C9A23A] rounded-full"></span>
-                Traffic flow data
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-[#C9A23A] rounded-full"></span>
-                Traffic volume counts
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-[#C9A23A] rounded-full"></span>
-                Aggregated multi-source intelligence
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-gradient-to-br from-[#C9A23A]/20 to-[#C9A23A]/5 backdrop-blur-sm rounded-xl p-6 border border-[#C9A23A]/30">
-            <div className="flex items-center gap-2 mb-3">
-              <h3 className="text-xl font-bold text-white">Predictive Flow</h3>
-              <span className="bg-[#C9A23A] text-[#0F172A] text-xs font-bold px-2 py-1 rounded">COMING SOON</span>
+        {/* Speed Comparison */}
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-[#C9A23A]/20 to-transparent rounded-2xl p-6 md:p-8 border border-[#C9A23A]/30">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <div className="text-5xl md:text-6xl font-bold text-[#C9A23A] mb-2">&lt;10s</div>
+                <p className="text-xl text-white font-semibold mb-2">Argus AI detection</p>
+                <p className="text-gray-400">From incident to alert in your driver&apos;s cab</p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-300">Waze</span>
+                  <span className="text-gray-500 font-mono">~10 min</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-300">INRIX</span>
+                  <span className="text-gray-500 font-mono">~6+ min</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-300">TomTom</span>
+                  <span className="text-gray-500 font-mono">~16 min</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-300">Google Maps</span>
+                  <span className="text-gray-500 font-mono">Variable</span>
+                </div>
+              </div>
             </div>
-            <p className="text-gray-300 mb-3">
-              Vision-based predictive traffic flow—anticipating conditions in 10-minute intervals, up to 90 minutes ahead.
-            </p>
-            <p className="text-sm text-gray-400">
-              No one else predicts because they don&apos;t see what&apos;s happening. We do.
-            </p>
           </div>
         </div>
       </div>
