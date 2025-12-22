@@ -1,9 +1,80 @@
 'use client';
 
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, CheckCircle, Loader2 } from 'lucide-react';
 
 const CallToAction = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    fleetSize: '',
+    telematics: '',
+  });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const message = `Fleet Size: ${formData.fleetSize || 'Not specified'}\nCurrent Telematics: ${formData.telematics || 'Not specified'}\n\nInterested in a demo.`;
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.email.split('@')[1]?.split('.')[0] || '',
+          interest: formData.fleetSize === 'api' ? 'API Access' : 'Fleet Demo',
+          message: message,
+        }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Failed to submit form');
+      }
+
+      setStatus('success');
+      setFormData({ name: '', email: '', fleetSize: '', telematics: '' });
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'Something went wrong');
+    }
+  };
+
+  if (status === 'success') {
+    return (
+      <section className="relative py-20 bg-gradient-to-br from-[#0F172A] via-[#1e293b] to-[#0F172A] overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#C9A23A] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#7FB7FF] rounded-full blur-3xl"></div>
+        </div>
+        <div className="relative max-w-2xl mx-auto px-6 text-center">
+          <div className="bg-white rounded-2xl p-12 shadow-2xl">
+            <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
+            <h2 className="text-2xl font-bold text-[#0F172A] mb-4">Thanks for reaching out!</h2>
+            <p className="text-gray-600 mb-6">
+              We&apos;ll be in touch within 24 hours to schedule your demo.
+            </p>
+            <a
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+              className="inline-flex items-center text-[#C9A23A] font-semibold hover:underline"
+            >
+              Or book a call now
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </a>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="relative py-20 bg-gradient-to-br from-[#0F172A] via-[#1e293b] to-[#0F172A] overflow-hidden">
       {/* Animated Background Elements */}
@@ -44,7 +115,7 @@ const CallToAction = () => {
           {/* Right: Form */}
           <div className="bg-white rounded-2xl p-8 shadow-2xl">
             <h3 className="text-xl font-bold text-[#0F172A] mb-6">Get started</h3>
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Name
@@ -53,6 +124,9 @@ const CallToAction = () => {
                   type="text"
                   id="name"
                   name="name"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all text-[#0F172A]"
                   placeholder="Your name"
                 />
@@ -65,6 +139,9 @@ const CallToAction = () => {
                   type="email"
                   id="email"
                   name="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all text-[#0F172A]"
                   placeholder="you@company.com"
                 />
@@ -76,6 +153,8 @@ const CallToAction = () => {
                 <select
                   id="fleet-size"
                   name="fleet-size"
+                  value={formData.fleetSize}
+                  onChange={(e) => setFormData({ ...formData, fleetSize: e.target.value })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all bg-white text-[#0F172A]"
                 >
                   <option value="">Select fleet size</option>
@@ -93,23 +172,42 @@ const CallToAction = () => {
                 <select
                   id="telematics"
                   name="telematics"
+                  value={formData.telematics}
+                  onChange={(e) => setFormData({ ...formData, telematics: e.target.value })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all bg-white text-[#0F172A]"
                 >
                   <option value="">Select your provider</option>
-                  <option value="platform-science">Platform Science</option>
-                  <option value="geotab">Geotab</option>
-                  <option value="samsara">Samsara</option>
-                  <option value="motive">Motive</option>
-                  <option value="other">Other</option>
-                  <option value="none">None / Building our own</option>
+                  <option value="Platform Science">Platform Science</option>
+                  <option value="Geotab">Geotab</option>
+                  <option value="Samsara">Samsara</option>
+                  <option value="Motive">Motive</option>
+                  <option value="Other">Other</option>
+                  <option value="None">None / Building our own</option>
                 </select>
               </div>
+
+              {status === 'error' && (
+                <div className="bg-red-50 text-red-600 px-4 py-3 rounded-lg text-sm">
+                  {errorMessage}
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center px-6 py-4 bg-[#0F172A] hover:bg-[#1e293b] text-white rounded-lg font-semibold transition-colors mt-2"
+                disabled={status === 'loading'}
+                className="w-full inline-flex items-center justify-center px-6 py-4 bg-[#0F172A] hover:bg-[#1e293b] text-white rounded-lg font-semibold transition-colors mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Request a demo
-                <ArrowRight className="w-5 h-5 ml-2" />
+                {status === 'loading' ? (
+                  <>
+                    <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    Request a demo
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </>
+                )}
               </button>
             </form>
             <p className="text-xs text-gray-500 mt-4 text-center">
