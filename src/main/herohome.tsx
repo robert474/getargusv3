@@ -144,28 +144,28 @@ export default function Hero() {
           <div className="max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
             {/* Main Heading */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-4 lg:mb-6 leading-tight">
-              Sub-10-second traffic data rail{' '}
-              <span className="text-[#C9A23A]">for fleets and navigation platforms</span>
+              Real-Time Crash & Slowdown Alerts{' '}
+              <span className="text-[#C9A23A]">for Your Fleet</span>
             </h1>
 
             {/* Subhead - Single clear sentence */}
             <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#F2F5F9] font-medium leading-relaxed mb-8 lg:mb-10">
-              Argus AI turns DOT cameras into real-time incident alerts so fleets and nav apps can reroute drivers before traffic apps even notice a problem.
+              Argus AI detects incidents from DOT cameras in under 10 seconds—so your drivers can reroute before Waze even knows there&apos;s a problem.
             </p>
 
             {/* CTA Buttons */}
             <div className="mt-8 lg:mt-10 flex flex-col sm:flex-row gap-4">
               <a
-                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+                href="#get-started"
                 className="inline-block bg-[#7FB7FF] text-[#0F172A] px-8 py-3 lg:px-10 lg:py-4 xl:px-12 xl:py-5 rounded-lg text-lg lg:text-xl xl:text-2xl font-semibold hover:bg-[#A5CEFF] transition-colors duration-200 shadow-lg text-center"
               >
-                Book a Fleet Demo
+                Get the Fleet App
               </a>
               <a
-                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+                href="#api-access"
                 className="inline-block border-2 border-white text-white px-8 py-3 lg:px-10 lg:py-4 xl:px-12 xl:py-5 rounded-lg text-lg lg:text-xl xl:text-2xl font-semibold hover:bg-white/10 transition-colors duration-200 text-center"
               >
-                Talk to the Founder
+                Request API Access
               </a>
             </div>
           </div>

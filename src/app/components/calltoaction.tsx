@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, CheckCircle, Clock, TrendingUp } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const CallToAction = () => {
   return (
@@ -13,78 +13,114 @@ const CallToAction = () => {
       </div>
 
       <div className="relative max-w-6xl mx-auto px-6">
-        {/* Main Content */}
-        <div className="text-center mb-12">
-          <div className="inline-block text-[#C9A23A] text-sm font-semibold uppercase tracking-wider mb-4">
-            Ready to Get Started?
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Run a pilot with your fleet
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            See how sub-10-second crash and slowdown alerts can protect your drivers, reduce fuel costs, and keep your fleet moving.
-          </p>
-        </div>
-
-        {/* Value Props Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
-            <div className="w-12 h-12 bg-[#0F172A] border-2 border-[#C9A23A] rounded-lg flex items-center justify-center mb-4">
-              <Clock className="w-6 h-6 text-[#C9A23A]" />
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left: Content */}
+          <div>
+            <div className="inline-block text-[#C9A23A] text-sm font-semibold uppercase tracking-wider mb-4">
+              Interested in Running a Pilot?
             </div>
-            <h3 className="text-lg font-bold text-white mb-2">Fast Integration</h3>
-            <p className="text-gray-300 text-sm">
-              One API, one integration. Works with Samsara, Motive, Geotab, Platform Science, and more.
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Let&apos;s talk about your fleet
+            </h2>
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+              Whether you&apos;re running 50 trucks or 5,000, we&apos;ll show you how sub-10-second alerts can protect your drivers and keep your fleet moving.
             </p>
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
-            <div className="w-12 h-12 bg-[#0F172A] border-2 border-[#C9A23A] rounded-lg flex items-center justify-center mb-4">
-              <TrendingUp className="w-6 h-6 text-[#C9A23A]" />
+            <div className="space-y-4 text-gray-300">
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-[#C9A23A] rounded-full"></span>
+                <span>Works with Platform Science, Geotab, Samsara, Motive</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-[#C9A23A] rounded-full"></span>
+                <span>No integration required for marketplace apps</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-[#C9A23A] rounded-full"></span>
+                <span>Founder-led support during your pilot</span>
+              </div>
             </div>
-            <h3 className="text-lg font-bold text-white mb-2">Proven Results</h3>
-            <p className="text-gray-300 text-sm">
-              Initial pilots cut response times by up to 20 minutes. Real-time alerts mean fewer delays.
-            </p>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
-            <div className="w-12 h-12 bg-[#0F172A] border-2 border-[#C9A23A] rounded-lg flex items-center justify-center mb-4">
-              <CheckCircle className="w-6 h-6 text-[#C9A23A]" />
-            </div>
-            <h3 className="text-lg font-bold text-white mb-2">Founder-Led Support</h3>
-            <p className="text-gray-300 text-sm">
-              Direct access to leadership during your pilot. We succeed when you succeed.
+          {/* Right: Form */}
+          <div className="bg-white rounded-2xl p-8 shadow-2xl">
+            <h3 className="text-xl font-bold text-[#0F172A] mb-6">Get started</h3>
+            <form className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  Work email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all"
+                  placeholder="you@company.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="fleet-size" className="block text-sm font-medium text-gray-700 mb-1">
+                  Fleet size
+                </label>
+                <select
+                  id="fleet-size"
+                  name="fleet-size"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all bg-white"
+                >
+                  <option value="">Select fleet size</option>
+                  <option value="10-50">10-50 vehicles</option>
+                  <option value="50-200">50-200 vehicles</option>
+                  <option value="200-500">200-500 vehicles</option>
+                  <option value="500+">500+ vehicles</option>
+                  <option value="api">I&apos;m interested in the API</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="telematics" className="block text-sm font-medium text-gray-700 mb-1">
+                  Current telematics
+                </label>
+                <select
+                  id="telematics"
+                  name="telematics"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C9A23A] focus:border-transparent outline-none transition-all bg-white"
+                >
+                  <option value="">Select your provider</option>
+                  <option value="platform-science">Platform Science</option>
+                  <option value="geotab">Geotab</option>
+                  <option value="samsara">Samsara</option>
+                  <option value="motive">Motive</option>
+                  <option value="other">Other</option>
+                  <option value="none">None / Building our own</option>
+                </select>
+              </div>
+              <button
+                type="submit"
+                className="w-full inline-flex items-center justify-center px-6 py-4 bg-[#0F172A] hover:bg-[#1e293b] text-white rounded-lg font-semibold transition-colors mt-2"
+              >
+                Request a demo
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </button>
+            </form>
+            <p className="text-xs text-gray-500 mt-4 text-center">
+              Or{' '}
+              <a
+                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+                className="text-[#C9A23A] hover:underline"
+              >
+                book a call directly
+              </a>
             </p>
-          </div>
-        </div>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a
-            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
-            className="group inline-flex items-center px-8 py-4 bg-[#7FB7FF] hover:bg-[#A5CEFF] text-[#0F172A] rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-          >
-            Book a Fleet Demo
-            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a
-            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
-            className="inline-flex items-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-xl font-semibold transition-all duration-300 border border-white/20 backdrop-blur-sm"
-          >
-            Talk to the Founder
-          </a>
-        </div>
-
-        {/* Trust Indicators */}
-        <div className="mt-12 pt-8 border-t border-white/10 text-center">
-          <p className="text-gray-400 text-sm mb-4">
-            Built for the mobility stack
-          </p>
-          <div className="text-[#F2F5F9] flex flex-wrap justify-center gap-8 items-center">
-            <div className="font-semibold">Fleet Operators</div>
-            <div className="font-semibold">Nav Platforms</div>
-            <div className="font-semibold">In-cab / Telematics</div>
           </div>
         </div>
       </div>

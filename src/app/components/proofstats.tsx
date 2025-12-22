@@ -6,21 +6,21 @@ export default function ProofStats() {
   const stats = [
     {
       icon: Clock,
-      value: 'Up to 20 minutes faster',
-      label: '911 response times in pilots',
-      description: 'Reduction in emergency response times during initial deployments with public safety partners.'
+      value: 'Up to 20 min faster',
+      label: 'Than traditional detection',
+      description: 'Get incident alerts before crowd-sourced apps even know there\'s a problem.'
     },
     {
       icon: Shield,
-      value: '10–30% fewer fatalities',
-      label: 'In early deployments',
-      description: 'Potential reduction in traffic fatalities based on faster incident detection and response.'
+      value: '6x faster',
+      label: 'Than Waze, INRIX, TomTom',
+      description: 'Peer-reviewed research confirms our speed advantage over every major provider.'
     },
     {
       icon: Zap,
       value: 'Sub-10s detection',
-      label: 'Crashes and abnormal slowdowns',
-      description: 'Real-time detection from DOT cameras—6x faster than crowd-sourced alternatives.'
+      label: 'Crashes and slowdowns',
+      description: 'Real-time detection from DOT cameras—your drivers reroute while others wait.'
     }
   ];
 
@@ -63,7 +63,7 @@ export default function ProofStats() {
         {/* Bottom connector sentence */}
         <div className="text-center border-t border-white/10 pt-10">
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-            Those same signals let fleets and nav platforms protect drivers, assets, and on-time performance in real time.
+            Protect your drivers, reduce fuel costs, and keep your fleet on schedule with the fastest incident alerts in the industry.
           </p>
         </div>
       </div>
