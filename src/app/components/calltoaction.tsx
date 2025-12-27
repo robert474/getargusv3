@@ -19,18 +19,17 @@ const CallToAction = () => {
     setErrorMessage('');
 
     try {
-      const response = await fetch('https://script.google.com/a/macros/trafficdatagroup.com/s/AKfycbzI3zhxvdNVq0GAhW9uxVlBPbpAYkbf7chz-p-E7CPZL-f-NiDc3K-uTZawm4jHZ9__CQ/exec', {
+      // Use URLSearchParams for form data - this works with no-cors mode
+      const params = new URLSearchParams();
+      params.append('name', formData.name);
+      params.append('email', formData.email);
+      params.append('fleetSize', formData.fleetSize);
+      params.append('telematics', formData.telematics);
+
+      await fetch('https://script.google.com/a/macros/trafficdatagroup.com/s/AKfycbzI3zhxvdNVq0GAhW9uxVlBPbpAYkbf7chz-p-E7CPZL-f-NiDc3K-uTZawm4jHZ9__CQ/exec', {
         method: 'POST',
         mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          fleetSize: formData.fleetSize,
-          telematics: formData.telematics,
-        }),
+        body: params,
       });
 
       // With no-cors mode, we can't read the response, so we assume success
