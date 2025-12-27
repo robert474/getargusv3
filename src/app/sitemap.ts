@@ -125,6 +125,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'hidden-cost-of-latency-in-traffic-alerts',
     'how-ai-video-inference-changes-incident-detection',
     'five-sources-of-real-time-traffic-data',
+    'argus-detects-incidents-faster-than-google-maps',
+    'traffic-delay-costs-for-rideshare-drivers',
+    'computer-vision-vs-crowdsourcing-incident-detection',
   ];
 
   const blogPages = blogPosts.map((slug) => ({
