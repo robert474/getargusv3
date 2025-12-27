@@ -17,9 +17,9 @@ const ibmPlexSans = IBM_Plex_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.getargus.ai'),
-  title: "Argus AI | Real-Time Route Optimization & Geospatial Analytics for Mobility & Logistics",
-  description: "AI-powered route optimization and real-time traffic intelligence for ride-sharing, food delivery, and last-mile logistics. Sub-10-second incident detection. Reduce costs 20-30%, increase deliveries 5-15%. Machine learning APIs for predictive routing and ETA accuracy.",
-  keywords: "route optimization, geospatial analytics, machine learning for logistics, real-time mapping APIs, predictive routing models, ETA accuracy, last-mile efficiency, fleet telematics, ride-sharing technology, food delivery optimization, dynamic routing, traffic prediction AI, delivery route planning, autonomous vehicle routing, multimodal transport optimization, last-mile logistics software, zero-emission fleet routing",
+  title: "Argus AI | Fastest Traffic Incident Detection API | Sub-10-Second Alerts",
+  description: "Computer vision API detecting traffic incidents 5-15 minutes faster than Google Maps and Waze. Real-time crash and slowdown alerts for fleets, navigation apps, and rideshare drivers. Sub-10 second detection.",
+  keywords: "traffic incident detection, fleet alerts, real-time traffic API, crash detection, slowdown alerts, navigation API, fleet telematics, rideshare traffic, computer vision traffic, incident detection API, traffic intelligence, route optimization, ETA accuracy",
   authors: [{ name: "Argus AI" }, { name: "Traffic Data Group, Inc." }],
   creator: "Traffic Data Group, Inc.",
   publisher: "Traffic Data Group, Inc.",
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.getargus.ai/",
-    title: "Argus AI | Real-Time Route Optimization for Mobility & Last-Mile Logistics",
-    description: "Cut last-mile costs 20-30% with AI-powered route optimization. Real-time traffic intelligence for ride-sharing, food delivery, and parcel logistics. Sub-10-second incident detection.",
+    title: "Argus AI | Fastest Traffic Incident Detection API",
+    description: "Computer vision API detecting traffic incidents 5-15 minutes faster than Google Maps. Real-time crash and slowdown alerts for fleets and navigation apps. Sub-10 second detection.",
     siteName: "Argus AI",
     locale: "en_US",
     images: [
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Argus AI | Real-Time Route Optimization for Mobility & Last-Mile Logistics",
-    description: "Cut last-mile costs 20-30% with AI-powered route optimization. Sub-10-second incident detection for ride-sharing and delivery fleets.",
+    title: "Argus AI | Fastest Traffic Incident Detection API",
+    description: "Computer vision API detecting traffic incidents 5-15 minutes faster than Google Maps. Sub-10 second alerts for fleets and navigation apps.",
     images: ["https://www.getargus.ai/images/og-image.png"],
   },
   other: {
