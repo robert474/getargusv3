@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, company, role, fleetSize, currentTools, message } = body;
+    const { name, email, fleetSize, telematics } = body;
 
     // Validate required fields
     if (!name || !email) {
@@ -34,14 +34,12 @@ export async function POST(request: NextRequest) {
 
     const authHeader = `Basic ${Buffer.from(closeApiKey + ':').toString('base64')}`;
 
-    // Build description with all form fields
+    // Build description
     const description = [
-      `Source: Contact Page`,
-      `Role: ${role || 'Not specified'}`,
+      `Source: Homepage CTA`,
       `Fleet Size: ${fleetSize || 'Not specified'}`,
-      `Current Tools: ${currentTools || 'Not specified'}`,
-      message ? `\nMessage:\n${message}` : '',
-    ].filter(Boolean).join('\n');
+      `Telematics: ${telematics || 'Not specified'}`,
+    ].join('\n');
 
     // Create lead in Close.com
     const leadResponse = await fetch('https://api.close.com/api/v1/lead/', {
@@ -51,7 +49,7 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        name: company || name,
+        name: name,
         contacts: [
           {
             name: name,
@@ -60,8 +58,7 @@ export async function POST(request: NextRequest) {
         ],
         custom: {
           'Fleet Size': fleetSize || '',
-          'Telematics': currentTools || '',
-          'Role': role || '',
+          'Telematics': telematics || '',
         },
         description: description,
       }),
@@ -84,7 +81,7 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
-    console.error('Contact form error:', error);
+    console.error('Lead form error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

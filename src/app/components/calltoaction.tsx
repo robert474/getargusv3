@@ -19,22 +19,27 @@ const CallToAction = () => {
     setErrorMessage('');
 
     try {
-      // Use URLSearchParams for form data - this works with no-cors mode
-      const params = new URLSearchParams();
-      params.append('name', formData.name);
-      params.append('email', formData.email);
-      params.append('fleetSize', formData.fleetSize);
-      params.append('telematics', formData.telematics);
-
-      await fetch('https://script.google.com/a/macros/trafficdatagroup.com/s/AKfycbzI3zhxvdNVq0GAhW9uxVlBPbpAYkbf7chz-p-E7CPZL-f-NiDc3K-uTZawm4jHZ9__CQ/exec', {
+      const response = await fetch('/api/lead', {
         method: 'POST',
-        mode: 'no-cors',
-        body: params,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          fleetSize: formData.fleetSize,
+          telematics: formData.telematics,
+        }),
       });
 
-      // With no-cors mode, we can't read the response, so we assume success
-      setStatus('success');
-      setFormData({ name: '', email: '', fleetSize: '', telematics: '' });
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', fleetSize: '', telematics: '' });
+      } else {
+        const data = await response.json();
+        setStatus('error');
+        setErrorMessage(data.error || 'Something went wrong');
+      }
     } catch (error) {
       setStatus('error');
       setErrorMessage(error instanceof Error ? error.message : 'Something went wrong');
