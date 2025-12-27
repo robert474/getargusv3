@@ -1,0 +1,30 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "getargus.ai"
+        }
+      ],
+      "destination": "https://www.getargus.ai/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.getargus.ai"
+        },
+        {
+          "type": "query",
+          "key": "_rsc"
+        }
+      ],
+      "destination": "https://www.getargus.ai/:path*",
+      "permanent": false
+    }
+  ]
+}
