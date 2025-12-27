@@ -1,14 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+const GOOGLE_SHEETS_URL = 'https://script.google.com/a/macros/trafficdatagroup.com/s/AKfycbzI3zhxvdNVq0GAhW9uxVlBPbpAYkbf7chz-p-E7CPZL-f-NiDc3K-uTZawm4jHZ9__CQ/exec';
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, company, interest, message } = body;
+    const { name, email, company, role, fleetSize, currentTools, message } = body;
 
     // Validate required fields
-    if (!name || !email || !message) {
+    if (!name || !email) {
       return NextResponse.json(
-        { error: 'Name, email, and message are required' },
+        { error: 'Name and email are required' },
         { status: 400 }
       );
     }
@@ -22,49 +24,21 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Close.com API key
-    const closeApiKey = process.env.CLOSE_API_KEY;
+    // Send to Google Sheets
+    const params = new URLSearchParams();
+    params.append('name', name);
+    params.append('email', email);
+    params.append('company', company || '');
+    params.append('role', role || '');
+    params.append('fleetSize', fleetSize || '');
+    params.append('telematics', currentTools || '');
+    params.append('message', message || '');
+    params.append('source', 'Contact Page');
 
-    if (!closeApiKey) {
-      console.error('CLOSE_API_KEY not configured');
-      return NextResponse.json(
-        { error: 'Server configuration error' },
-        { status: 500 }
-      );
-    }
-
-    const authHeader = `Basic ${Buffer.from(closeApiKey + ':').toString('base64')}`;
-
-    // Create lead in Close.com
-    const leadResponse = await fetch('https://api.close.com/api/v1/lead/', {
+    await fetch(GOOGLE_SHEETS_URL, {
       method: 'POST',
-      headers: {
-        'Authorization': authHeader,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: company || name,
-        contacts: [
-          {
-            name: name,
-            emails: [{ email: email, type: 'office' }],
-          }
-        ],
-        description: `Interest: ${interest || 'General Inquiry'}\n\nMessage:\n${message}\n\nSource: Website Contact Form`,
-      }),
+      body: params,
     });
-
-    if (!leadResponse.ok) {
-      const errorData = await leadResponse.text();
-      console.error('Close.com API error:', leadResponse.status, errorData);
-      return NextResponse.json(
-        { error: `Close.com error: ${leadResponse.status} - ${errorData}` },
-        { status: 500 }
-      );
-    }
-
-    const leadData = await leadResponse.json();
-    console.log('Lead created in Close.com:', leadData.id);
 
     return NextResponse.json(
       { success: true, message: 'Form submitted successfully' },
