@@ -58,11 +58,6 @@ export async function POST(request: NextRequest) {
             emails: [{ email: email, type: 'office' }],
           }
         ],
-        custom: {
-          'Fleet Size': fleetSize || '',
-          'Telematics': currentTools || '',
-          'Role': role || '',
-        },
         description: description,
       }),
     });
