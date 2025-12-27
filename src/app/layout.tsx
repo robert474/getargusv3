@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://www.getargus.ai',
+    canonical: './', // Dynamic canonical based on current page
   },
   openGraph: {
     type: "website",
