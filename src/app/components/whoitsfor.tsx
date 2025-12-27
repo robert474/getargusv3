@@ -1,6 +1,7 @@
 'use client';
 
 import { Truck, Code, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function WhoItsFor() {
   return (
@@ -51,24 +52,35 @@ export default function WhoItsFor() {
                   Start in minutes
                 </li>
               </ul>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <p className="text-sm text-gray-400 mb-4">Available on:</p>
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://marketplace.platformscience.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-[#C9A23A] hover:bg-[#E7C873] text-[#0F172A] rounded-lg font-semibold transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-white rounded-lg hover:bg-gray-100 transition-colors"
                 >
-                  Platform Science
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  <Image
+                    src="/images/platform-science-logo.png"
+                    alt="Platform Science Marketplace"
+                    width={140}
+                    height={32}
+                    className="h-8 w-auto object-contain"
+                  />
                 </a>
                 <a
                   href="https://marketplace.geotab.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold transition-colors border border-white/20"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-white rounded-lg hover:bg-gray-100 transition-colors"
                 >
-                  Geotab Marketplace
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  <Image
+                    src="/images/geotab-logo.png"
+                    alt="Geotab Marketplace"
+                    width={120}
+                    height={32}
+                    className="h-8 w-auto object-contain"
+                  />
                 </a>
               </div>
             </div>
