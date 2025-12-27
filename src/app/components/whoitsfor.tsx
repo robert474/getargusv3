@@ -53,35 +53,25 @@ export default function WhoItsFor() {
                 </li>
               </ul>
               <p className="text-sm text-gray-400 mb-4">Available on:</p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://marketplace.platformscience.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white rounded-lg hover:bg-gray-100 transition-colors"
-                >
+              <div className="flex flex-row items-center gap-6">
+                <div className="bg-white rounded-lg px-4 py-3">
                   <Image
                     src="/images/platform-science-logo.png"
-                    alt="Platform Science Marketplace"
+                    alt="Platform Science"
                     width={140}
                     height={32}
                     className="h-8 w-auto object-contain"
                   />
-                </a>
-                <a
-                  href="https://marketplace.geotab.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white rounded-lg hover:bg-gray-100 transition-colors"
-                >
+                </div>
+                <div className="bg-white rounded-lg px-4 py-3">
                   <Image
                     src="/images/geotab-logo.png"
-                    alt="Geotab Marketplace"
+                    alt="Geotab"
                     width={120}
                     height={32}
                     className="h-8 w-auto object-contain"
                   />
-                </a>
+                </div>
               </div>
             </div>
           </div>
