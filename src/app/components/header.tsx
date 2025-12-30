@@ -556,6 +556,14 @@ export default function Header() {
                 <div className="fixed left-1/2 transform -translate-x-1/2 top-20 w-[400px] bg-white shadow-xl rounded-b-lg overflow-hidden border border-gray-100">
                   <div className="p-6">
                     <Link
+                      href="/developer/platform"
+                      onClick={() => setIsDeveloperOpen(false)}
+                      className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
+                    >
+                      <span className="block font-semibold">Traffic Data Ontology</span>
+                      <span className="block text-xs text-gray-500 mt-0.5">One API, any traffic data source</span>
+                    </Link>
+                    <Link
                       href="/developer/api"
                       onClick={() => setIsDeveloperOpen(false)}
                       className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
@@ -715,11 +723,18 @@ export default function Header() {
               Industries
             </Link>
             <Link
-              href="/developer"
+              href="/developer/platform"
               className="block px-4 py-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
-              Developer
+              Traffic Ontology
+            </Link>
+            <Link
+              href="/developer/api"
+              className="block px-4 py-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              API Docs
             </Link>
             <Link
               href="/about"

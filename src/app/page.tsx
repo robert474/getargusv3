@@ -2,6 +2,7 @@ import Header from "./components/header";
 import Hero from "@/main/herohome";
 import ProductShowcase from "./components/productshowcase";
 import Detection from "./components/detection";
+import OntologyTeaser from "./components/ontologyteaser";
 import WhoItsFor from "./components/whoitsfor";
 import LatencyComparison from "./components/latencycomparison";
 import CallToAction from "./components/calltoaction";
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <ProductShowcase />
       <Detection />
+      <OntologyTeaser />
       <WhoItsFor />
       <LatencyComparison />
       <CallToAction />

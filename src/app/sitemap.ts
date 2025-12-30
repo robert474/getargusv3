@@ -49,6 +49,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/developer/platform`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
     // Company section
     {
       url: `${baseUrl}/company/vision`,
@@ -128,6 +134,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'argus-detects-incidents-faster-than-google-maps',
     'traffic-delay-costs-for-rideshare-drivers',
     'computer-vision-vs-crowdsourcing-incident-detection',
+    'why-tomtom-here-apis-slow-development',
+    'crowdsourced-traffic-data-15-minutes-late',
+    'hidden-cost-traffic-api-vendor-lock-in',
+    'traffic-integration-cant-keep-up-innovation',
   ];
 
   const blogPages = blogPosts.map((slug) => ({
