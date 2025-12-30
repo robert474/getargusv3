@@ -43,7 +43,7 @@ export default function BlogPost() {
             <div className="flex items-center gap-6 text-sm text-gray-400">
               <span className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                December 30, 2024
+                December 22, 2024
               </span>
               <span className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />

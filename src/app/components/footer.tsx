@@ -138,6 +138,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/developer/platform" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
+                  Traffic Data Ontology
+                </Link>
+              </li>
+              <li>
                 <Link href="/developer/api" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
                   API Documentation
                 </Link>
@@ -360,6 +365,11 @@ export default function Footer() {
                   <li>
                     <Link href="/developer" className="block text-gray-300 hover:text-[#C9A23A] transition-colors duration-200 py-2 font-semibold">
                       Developer Hub
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/developer/platform" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
+                      Traffic Data Ontology
                     </Link>
                   </li>
                   <li>
