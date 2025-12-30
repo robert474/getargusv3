@@ -212,7 +212,9 @@ const blogPosts = [
 
 export default function BlogPage() {
   const featuredPost = blogPosts.find(post => post.featured);
-  const regularPosts = blogPosts.filter(post => !post.featured);
+  const regularPosts = blogPosts
+    .filter(post => !post.featured)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <>
