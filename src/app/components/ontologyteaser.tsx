@@ -13,11 +13,10 @@ export default function OntologyTeaser() {
             App + API + Ontology
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-4">
-            Our App Runs on Our API.<br />
-            <span className="text-[#C9A23A]">Your App Can Too.</span>
+            An API Without the Rebuild.
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Everything we build is powered by the same API we offer developers. At our core: the fastest incident detection and a universal traffic data ontology.
+            Argus Ontology layer handles the data schema complexity and produces one clean feed to your routing and navigation engine.
           </p>
         </div>
 
