@@ -5,11 +5,11 @@ import { Calendar, Clock, ArrowLeft, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Why TomTom and HERE Traffic APIs Slow Down Development | Argus AI Blog',
-  description: 'Proprietary formats, complex XML schemas, and inconsistent data structures make TomTom and HERE APIs a developer nightmare. Learn why custom parsers waste months of engineering time.',
-  keywords: 'TomTom API problems, HERE API integration, traffic API development, proprietary traffic data, traffic data parsing, TomTom alternative, HERE alternative',
+  title: 'Why Traditional Traffic APIs Slow Down Development | Argus AI Blog',
+  description: 'Proprietary formats, complex XML schemas, and inconsistent data structures make traditional traffic APIs a developer nightmare. Learn why custom parsers waste months of engineering time.',
+  keywords: 'traffic API problems, traffic API integration, traffic API development, proprietary traffic data, traffic data parsing, traffic API alternative',
   openGraph: {
-    title: 'Why TomTom and HERE Traffic APIs Slow Down Development',
+    title: 'Why Traditional Traffic APIs Slow Down Development',
     description: 'Proprietary formats and complex schemas waste months of engineering time.',
     type: 'article',
   },
@@ -33,7 +33,7 @@ export default function BlogPost() {
             </span>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              Why TomTom and HERE Traffic APIs Slow Down Development
+              Why Traditional Traffic APIs Slow Down Development
             </h1>
 
             <p className="text-xl text-gray-300 mb-8">

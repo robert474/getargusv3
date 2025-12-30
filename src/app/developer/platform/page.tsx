@@ -537,7 +537,7 @@ export default function PlatformPage() {
               <Link href="/company/blog/why-tomtom-here-apis-slow-development" className="group">
                 <div className="border border-gray-200 rounded-lg p-4 hover:border-[#C9A23A] transition-colors">
                   <p className="text-sm text-[#C9A23A] mb-2">Development</p>
-                  <p className="font-semibold text-[#0F172A] group-hover:text-[#C9A23A] transition-colors">Why TomTom and HERE APIs Slow Down Development</p>
+                  <p className="font-semibold text-[#0F172A] group-hover:text-[#C9A23A] transition-colors">Why Traditional Traffic APIs Slow Down Development</p>
                 </div>
               </Link>
               <Link href="/company/blog/crowdsourced-traffic-data-15-minutes-late" className="group">
