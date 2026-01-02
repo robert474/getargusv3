@@ -2,7 +2,7 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Link from 'next/link';
 import Script from 'next/script';
-import { Code, Zap, Clock, Database, AlertTriangle, CheckCircle } from 'lucide-react';
+import { Code, Shield, Zap, Clock, Database, AlertTriangle, CheckCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
