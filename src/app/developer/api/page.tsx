@@ -2,7 +2,7 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Link from 'next/link';
 import Script from 'next/script';
-import { Code, Shield, Zap, Clock, Database, AlertTriangle, CheckCircle } from 'lucide-react';
+import { Code, Zap, Clock, Database, AlertTriangle, CheckCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -209,12 +209,12 @@ export default function APIDocsPage() {
                 <div className="w-10 h-10 bg-[#C9A23A] rounded-lg flex items-center justify-center mb-4">
                   <span className="text-white font-bold">2</span>
                 </div>
-                <h3 className="text-xl font-bold text-[#0F172A] mb-2">Authenticate</h3>
+                <h3 className="text-xl font-bold text-[#0F172A] mb-2">Subscribe to Events</h3>
                 <p className="text-gray-600 mb-4">
-                  Include your API key in the Authorization header as a Bearer token on all requests.
+                  Register a webhook endpoint to receive real-time traffic incident alerts pushed to your server.
                 </p>
-                <a href="#authentication" className="text-[#C9A23A] font-semibold hover:underline">
-                  See Authentication →
+                <a href="#endpoints" className="text-[#C9A23A] font-semibold hover:underline">
+                  See Webhook API →
                 </a>
               </div>
 
@@ -250,78 +250,6 @@ export default function APIDocsPage() {
     "types": ["accident", "congestion", "road_closure"]
   }'`}</code>
                 </pre>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Authentication */}
-        <section id="authentication" className="py-16 bg-[#F2F5F9]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-[#0F172A] mb-8">Authentication</h2>
-
-            <div className="grid lg:grid-cols-2 gap-8">
-              <div>
-                <p className="text-gray-700 mb-6">
-                  All API requests require authentication using a Bearer token. Include your API key in the
-                  <code className="mx-1 px-2 py-1 bg-[#0F172A] text-[#C9A23A] rounded text-sm">Authorization</code>
-                  header of every request.
-                </p>
-
-                <div className="bg-[#0F172A] rounded-lg p-4 mb-6">
-                  <code className="text-[#C9A23A]">Authorization: Bearer YOUR_API_KEY</code>
-                </div>
-
-                <h3 className="text-xl font-bold text-[#0F172A] mb-4">Security Best Practices</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <Shield className="w-5 h-5 text-[#C9A23A] mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Never expose API keys in client-side code or public repositories</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Shield className="w-5 h-5 text-[#C9A23A] mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Use environment variables to store API keys securely</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Shield className="w-5 h-5 text-[#C9A23A] mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Rotate keys periodically and revoke compromised keys immediately</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Shield className="w-5 h-5 text-[#C9A23A] mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Use IP whitelisting for production environments</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold text-[#0F172A] mb-4">Example: Node.js</h3>
-                <div className="bg-[#0F172A] rounded-xl overflow-hidden">
-                  <div className="px-4 py-2 bg-[#1E293B]">
-                    <span className="text-xs text-gray-400">JavaScript</span>
-                  </div>
-                  <div className="p-4 overflow-x-auto">
-                    <pre className="text-sm text-gray-300">
-                      <code>{`const axios = require('axios');
-
-const argusClient = axios.create({
-  baseURL: 'https://api.getargus.ai/v1',
-  headers: {
-    'Authorization': \`Bearer \${process.env.ARGUS_API_KEY}\`,
-    'Content-Type': 'application/json'
-  }
-});
-
-// Fetch incidents in area
-const incidents = await argusClient.get('/incidents', {
-  params: {
-    lat: 40.7128,
-    lng: -74.0060,
-    radius_km: 10
-  }
-});`}</code>
-                    </pre>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -721,152 +649,6 @@ X-Webhook-Timestamp: 2025-11-07T14:32:15.234Z`}</code>
   }
 }`}</code>
               </pre>
-            </div>
-          </div>
-        </section>
-
-        {/* Rate Limits */}
-        <section className="py-16 bg-[#F2F5F9]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-[#0F172A] mb-8">Rate Limits</h2>
-
-            <p className="text-gray-700 mb-6">
-              Rate limits vary by plan and are applied per API key. Rate limit headers are included in every response
-              to help you monitor usage.
-            </p>
-
-            <div className="overflow-x-auto mb-8">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-[#0F172A]">
-                    <th className="text-left py-4 px-4 font-bold text-white">Plan</th>
-                    <th className="text-left py-4 px-4 font-bold text-white">Requests/Minute</th>
-                    <th className="text-left py-4 px-4 font-bold text-white">Requests/Day</th>
-                    <th className="text-left py-4 px-4 font-bold text-white">WebSocket Connections</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-gray-200 bg-white">
-                    <td className="py-4 px-4 text-[#0F172A] font-semibold">Starter</td>
-                    <td className="py-4 px-4 text-[#0F172A]">60</td>
-                    <td className="py-4 px-4 text-[#0F172A]">10,000</td>
-                    <td className="py-4 px-4 text-[#0F172A]">1</td>
-                  </tr>
-                  <tr className="border-b border-gray-200 bg-[#F2F5F9]">
-                    <td className="py-4 px-4 text-[#0F172A] font-semibold">Growth</td>
-                    <td className="py-4 px-4 text-[#0F172A]">300</td>
-                    <td className="py-4 px-4 text-[#0F172A]">100,000</td>
-                    <td className="py-4 px-4 text-[#0F172A]">5</td>
-                  </tr>
-                  <tr className="bg-white">
-                    <td className="py-4 px-4 text-[#C9A23A] font-bold">Enterprise</td>
-                    <td className="py-4 px-4 text-[#0F172A] font-medium">Custom</td>
-                    <td className="py-4 px-4 text-[#0F172A] font-medium">Unlimited</td>
-                    <td className="py-4 px-4 text-[#0F172A] font-medium">Custom</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <h3 className="text-xl font-bold text-[#0F172A] mb-4">Rate Limit Headers</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-white rounded-lg p-4">
-                <code className="text-[#C9A23A] text-sm">X-RateLimit-Limit</code>
-                <p className="text-sm text-gray-600 mt-1">Maximum requests per minute for your plan</p>
-              </div>
-              <div className="bg-white rounded-lg p-4">
-                <code className="text-[#C9A23A] text-sm">X-RateLimit-Remaining</code>
-                <p className="text-sm text-gray-600 mt-1">Requests remaining in current window</p>
-              </div>
-              <div className="bg-white rounded-lg p-4">
-                <code className="text-[#C9A23A] text-sm">X-RateLimit-Reset</code>
-                <p className="text-sm text-gray-600 mt-1">Unix timestamp when limit resets</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SDK & Libraries */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-[#0F172A] mb-8">SDKs & Code Examples</h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-bold text-[#0F172A] mb-4">Python</h3>
-                <div className="bg-[#0F172A] rounded-xl overflow-hidden">
-                  <div className="px-4 py-2 bg-[#1E293B]">
-                    <span className="text-xs text-gray-400">Python 3.x</span>
-                  </div>
-                  <div className="p-4 overflow-x-auto">
-                    <pre className="text-sm text-gray-300">
-                      <code>{`import requests
-import os
-
-ARGUS_API_KEY = os.environ['ARGUS_API_KEY']
-BASE_URL = 'https://api.getargus.ai/v1'
-
-def get_incidents(lat, lng, radius_km=10):
-    response = requests.get(
-        f'{BASE_URL}/incidents',
-        headers={
-            'Authorization': f'Bearer {ARGUS_API_KEY}'
-        },
-        params={
-            'lat': lat,
-            'lng': lng,
-            'radius_km': radius_km
-        }
-    )
-    return response.json()
-
-# Get incidents near NYC
-incidents = get_incidents(40.7128, -74.0060)
-for inc in incidents['data']['incidents']:
-    print(f"{inc['type']}: {inc['location']['road']}")`}</code>
-                    </pre>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold text-[#0F172A] mb-4">JavaScript/TypeScript</h3>
-                <div className="bg-[#0F172A] rounded-xl overflow-hidden">
-                  <div className="px-4 py-2 bg-[#1E293B]">
-                    <span className="text-xs text-gray-400">TypeScript</span>
-                  </div>
-                  <div className="p-4 overflow-x-auto">
-                    <pre className="text-sm text-gray-300">
-                      <code>{`interface Incident {
-  id: string;
-  type: string;
-  severity: string;
-  location: {
-    lat: number;
-    lng: number;
-    road: string;
-  };
-}
-
-async function getIncidents(
-  lat: number,
-  lng: number
-): Promise<Incident[]> {
-  const res = await fetch(
-    \`https://api.getargus.ai/v1/incidents?lat=\${lat}&lng=\${lng}\`,
-    {
-      headers: {
-        'Authorization': \`Bearer \${process.env.ARGUS_API_KEY}\`
-      }
-    }
-  );
-  const data = await res.json();
-  return data.data.incidents;
-}`}</code>
-                    </pre>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
