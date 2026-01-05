@@ -1,0 +1,16 @@
+# Robots.txt for www.getargus.ai
+
+User-agent: *
+Allow: /
+
+# Block internal Next.js routes and query parameters
+Disallow: /*?_rsc=
+Disallow: /*?_rsc
+Disallow: /_next/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://www.getargus.ai/sitemap.xml
+
+# Canonical host
+Host: https://www.getargus.ai
