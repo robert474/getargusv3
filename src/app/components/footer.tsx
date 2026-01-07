@@ -41,18 +41,18 @@ export default function Footer() {
   <h3 className="font-semibold text-base mb-4 text-[#C9A23A]">Solutions</h3>
   <ul className="space-y-2.5">
     <li>
-      <Link href="/solutions" className="text-gray-300 hover:text-[#C9A23A] transition-colors duration-200 text-sm font-semibold">
-        All Solutions
+      <Link href="/solutions/app" className="text-gray-300 hover:text-[#C9A23A] transition-colors duration-200 text-sm font-semibold">
+        Argus Nav App
       </Link>
     </li>
     <li>
-      <Link href="/solutions#mobility" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
-        DOTs / ITS
+      <Link href="/solutions#mobility" className="text-gray-300 hover:text-[#C9A23A] transition-colors duration-200 text-sm font-semibold">
+        Argus API
       </Link>
     </li>
     <li>
       <Link href="/solutions#incident-911" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
-        911/PSAPs
+        Incident Management & 911
       </Link>
     </li>
     <li>
@@ -96,17 +96,17 @@ export default function Footer() {
   <h3 className="font-semibold text-base mb-4 text-[#C9A23A]">Industries</h3>
   <ul className="space-y-2.5">
     <li>
-      <Link href="/industries" className="text-gray-300 hover:text-[#C9A23A] transition-colors duration-200 text-sm font-semibold">
-        All Industries
+      <Link href="/industries#government" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
+        Government
       </Link>
     </li>
     <li>
-      <Link href="/industries#fleet-last-mile" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
+      <Link href="/industries#fleet" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
         Fleet / Last Mile
       </Link>
     </li>
     <li>
-      <Link href="/industries#ride-share" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
+      <Link href="/industries#rideshare" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
         Ride Share / Mobility
       </Link>
     </li>
@@ -118,11 +118,6 @@ export default function Footer() {
     <li>
       <Link href="/industries#forensics" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
         Forensics
-      </Link>
-    </li>
-    <li>
-      <Link href="/industries#government" className="text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 text-sm">
-        Government
       </Link>
     </li>
   </ul>
@@ -218,18 +213,18 @@ export default function Footer() {
              {isSolutionsOpen && (
   <ul className="pb-4 space-y-2">
     <li>
-      <Link href="/solutions" className="block text-gray-300 hover:text-[#C9A23A] transition-colors duration-200 py-2 font-semibold">
-        All Solutions
+      <Link href="/solutions/app" className="block text-gray-300 hover:text-[#C9A23A] transition-colors duration-200 py-2 font-semibold">
+        Argus Nav App
       </Link>
     </li>
     <li>
-      <Link href="/solutions#mobility" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
-        DOTs / ITS
+      <Link href="/solutions#mobility" className="block text-gray-300 hover:text-[#C9A23A] transition-colors duration-200 py-2 font-semibold">
+        Argus API
       </Link>
     </li>
     <li>
       <Link href="/solutions#incident-911" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
-        911/PSAPs
+        Incident Management & 911
       </Link>
     </li>
     <li>
@@ -308,17 +303,17 @@ export default function Footer() {
       {isIndustriesOpen && (
   <ul className="pb-4 space-y-2">
     <li>
-      <Link href="/industries" className="block text-gray-300 hover:text-[#C9A23A] transition-colors duration-200 py-2 font-semibold">
-        All Industries
+      <Link href="/industries#government" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
+        Government
       </Link>
     </li>
     <li>
-      <Link href="/industries#fleet-last-mile" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
+      <Link href="/industries#fleet" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
         Fleet / Last Mile
       </Link>
     </li>
     <li>
-      <Link href="/industries#ride-share" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
+      <Link href="/industries#rideshare" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
         Ride Share / Mobility
       </Link>
     </li>
@@ -330,11 +325,6 @@ export default function Footer() {
     <li>
       <Link href="/industries#forensics" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
         Forensics
-      </Link>
-    </li>
-    <li>
-      <Link href="/industries#government" className="block text-gray-400 hover:text-[#C9A23A] transition-colors duration-200 py-2">
-        Government
       </Link>
     </li>
   </ul>
