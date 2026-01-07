@@ -76,84 +76,111 @@ export default function BlogPost() {
             <div className="prose prose-lg max-w-none">
 
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Think about the cassette tape player in your parents&apos; car. It recorded audio onto magnetic
-                tape. You could play it back later. That was the entire value proposition. Now look at
-                Spotify&mdash;real-time streaming, personalized recommendations, instant access to any song
-                ever recorded. The technology evolved from passive storage to active intelligence.
+                Your fleet dashcam is a tape recorder. It captures video that sits on a hard drive until
+                someone needs it for an insurance claim or a driver coaching session. The feedback loop
+                takes days, sometimes weeks. By the time anyone watches the footage, the moment is long gone.
               </p>
 
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Today&apos;s dashcams are tape players. Tomorrow&apos;s vision systems are Spotify.
+                Meanwhile, every Tesla on the road is processing video in real-time. Every Waymo vehicle
+                is making thousands of decisions per second based on what its cameras see right now.
+                These aren&apos;t recording devices&mdash;they&apos;re active intelligence systems. And the
+                data they generate is staggering.
               </p>
 
               <h2 className="text-2xl font-bold text-[#0F172A] mt-12 mb-4">
-                The Tape Player Problem
+                The Tape Player Era: Garmin, Lytx, and Fleet Dashcams
               </h2>
 
               <p className="text-gray-600 mb-4">
-                Walk into any fleet operation and you&apos;ll find thousands of dashcams dutifully recording
-                video onto SD cards or local storage. When something happens&mdash;an accident, a theft,
-                a disputed delivery&mdash;someone retrieves the footage manually. Maybe days later. Maybe
-                never, if no one knows to look.
+                Walk into any fleet operation and you&apos;ll find dashcams from Garmin, Lytx, Samsara,
+                or Vantrue. They&apos;re everywhere. And they all work essentially the same way:
+              </p>
+
+              <ul className="list-disc pl-6 text-gray-600 mb-4 space-y-2">
+                <li><strong>Record continuously</strong> onto an SD card or cloud storage</li>
+                <li><strong>Wait for an event</strong>&mdash;an accident, a complaint, a triggered alert</li>
+                <li><strong>Retrieve footage manually</strong> after the fact</li>
+                <li><strong>Review days or weeks later</strong> for insurance or coaching</li>
+              </ul>
+
+              <p className="text-gray-600 mb-4">
+                The primary use cases? <strong>Insurance claims</strong> and <strong>driver coaching</strong>.
+                When there&apos;s an accident, you pull the footage to prove fault. When a driver has
+                repeated hard-braking events, you schedule a coaching session to review the clips.
               </p>
 
               <p className="text-gray-600 mb-4">
-                This is passive video. The camera captures everything, processes nothing, and waits for
-                a human to give it meaning. It&apos;s the same fundamental model as a 1970s tape recorder,
-                just with better resolution.
+                This is valuable. But it&apos;s fundamentally reactive. The camera captures everything,
+                processes nothing in real-time, and waits for a human to give it meaning. The feedback
+                loop is measured in days, not seconds.
               </p>
 
               <div className="bg-red-50 rounded-xl p-6 my-8 border-l-4 border-red-500">
-                <p className="text-red-800 font-semibold mb-2">The Real Cost of Passive Video</p>
+                <p className="text-red-800 font-semibold mb-2">The Passive Video Problem</p>
                 <p className="text-red-700">
                   A fleet of 500 trucks generates approximately 4,000 hours of dashcam footage per day.
                   At $15/hour for a human reviewer, watching it all would cost $60,000 daily. So nobody
                   watches it&mdash;and 99.9% of the intelligence captured by those cameras is never used.
+                  It&apos;s only retrieved when something goes wrong.
                 </p>
               </div>
 
               <h2 className="text-2xl font-bold text-[#0F172A] mt-12 mb-4">
-                What Tesla and Waymo Already Know
+                The Future Is Already Here: Tesla and Waymo
               </h2>
 
               <p className="text-gray-600 mb-4">
-                Meanwhile, every Tesla on the road is a rolling AI laboratory. Eight cameras capture
-                360-degree video. Neural networks process every frame in real-time. The system doesn&apos;t
-                just record&mdash;it understands. It identifies pedestrians, predicts their movement,
-                recognizes traffic signals, and detects hazards before human drivers notice them.
+                Tesla and Waymo represent a completely different paradigm. Their cameras aren&apos;t
+                recording for later&mdash;they&apos;re processing in real-time, every millisecond,
+                making decisions that keep vehicles safe and efficient.
               </p>
 
               <p className="text-gray-600 mb-4">
-                The scale of data is almost incomprehensible:
-              </p>
+                The scale of data these systems generate is almost incomprehensible:</p>
 
               <div className="bg-[#0F172A] rounded-xl p-6 my-8">
-                <p className="text-white font-semibold mb-4">Data Generation: Tesla vs Traditional Dashcam</p>
+                <p className="text-white font-semibold mb-4">Data Generation: Active vs Passive Systems</p>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center border-b border-gray-700 pb-3">
-                    <span className="text-gray-300">Traditional dashcam</span>
-                    <span className="text-white font-mono">~50 GB/day</span>
+                    <span className="text-gray-500">Garmin/Lytx dashcam (passive)</span>
+                    <span className="text-gray-400 font-mono">~50 GB/day</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-gray-700 pb-3">
-                    <span className="text-gray-300">Tesla (8 cameras + sensors)</span>
-                    <span className="text-[#C9A23A] font-mono">~1.8 TB/day</span>
+                    <span className="text-gray-300">Tesla Autopilot (8 cameras)</span>
+                    <span className="text-[#C9A23A] font-mono">~1.8 TB/day per vehicle</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-gray-700 pb-3">
-                    <span className="text-gray-300">Waymo (29 cameras + lidar)</span>
-                    <span className="text-[#C9A23A] font-mono">~4+ TB/day</span>
+                    <span className="text-gray-300">Waymo Driver (29 cameras + lidar)</span>
+                    <span className="text-[#C9A23A] font-mono">~4+ TB/day per vehicle</span>
+                  </div>
+                  <div className="flex justify-between items-center border-b border-gray-700 pb-3">
+                    <span className="text-white font-semibold">Tesla fleet (2M+ vehicles)</span>
+                    <span className="text-[#7FB7FF] font-mono font-bold">~3.6 exabytes/day</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-300">Tesla fleet total (2M+ vehicles)</span>
-                    <span className="text-[#7FB7FF] font-mono">~3.6 exabytes/day</span>
+                    <span className="text-gray-400 text-sm">That&apos;s 3,600,000,000 GB of visual data daily</span>
+                    <span className="text-gray-500 font-mono text-sm"></span>
                   </div>
                 </div>
               </div>
 
               <p className="text-gray-600 mb-4">
-                Waymo&apos;s vehicles are even more data-intensive. Twenty-nine cameras, multiple lidar
-                units, radar sensors&mdash;each vehicle generates over 4 terabytes of raw sensor data
-                per day. But here&apos;s the key: they don&apos;t store 4 terabytes. They process 4 terabytes
-                into actionable intelligence in real-time.
+                Let those numbers sink in. A single Tesla generates <strong>36x more data</strong> than
+                a traditional dashcam. And Tesla&apos;s fleet of 2+ million vehicles collectively generates
+                more visual data per day than existed on the entire internet in 2005.
+              </p>
+
+              <p className="text-gray-600 mb-4">
+                Waymo is even more extreme. Twenty-nine cameras, multiple lidar units, radar sensors&mdash;each
+                vehicle generates over 4 terabytes of raw sensor data per day. A single Waymo vehicle
+                produces more data in one day than a fleet of 80 traditional dashcams.
+              </p>
+
+              <p className="text-gray-600 mb-4">
+                But here&apos;s the critical difference: <strong>they don&apos;t store this data for later review</strong>.
+                They process it in real-time. Every frame is analyzed, every object is tracked, every decision
+                is made in milliseconds. The feedback loop isn&apos;t days&mdash;it&apos;s instantaneous.
               </p>
 
               <h2 className="text-2xl font-bold text-[#0F172A] mt-12 mb-4">
@@ -245,12 +272,21 @@ export default function BlogPost() {
               </ul>
 
               <div className="bg-[#0F172A] rounded-xl p-6 my-8 border-l-4 border-[#C9A23A]">
-                <p className="text-[#C9A23A] font-semibold mb-2">The Argus AI Approach</p>
-                <p className="text-gray-300">
-                  At Argus AI, we&apos;ve built vision intelligence systems that work with the cameras
-                  fleets already have. Our AI models are optimized for low-resolution input, minimal
-                  bandwidth requirements, and sub-second latency. The result: high-quality traffic
-                  intelligence from standard dashcams, without the Tesla price tag.
+                <p className="text-[#C9A23A] font-semibold mb-2">How Argus AI Is Different</p>
+                <p className="text-gray-300 mb-4">
+                  Argus AI brings active vision intelligence to fleets&mdash;without requiring Tesla-level
+                  hardware or bandwidth. We&apos;ve solved the hard problem: extracting real-time, actionable
+                  intelligence from the cameras and infrastructure that already exist.
+                </p>
+                <ul className="text-gray-300 space-y-2 list-disc pl-6">
+                  <li><strong className="text-white">Low-resolution input</strong>: Our models work with standard 720p camera feeds, not 4K multi-camera arrays</li>
+                  <li><strong className="text-white">Low-bandwidth</strong>: We transmit insights (kilobytes), not raw video (gigabytes)</li>
+                  <li><strong className="text-white">Low-latency</strong>: Sub-10-second detection, not days-later review</li>
+                  <li><strong className="text-white">High-quality answers</strong>: Incident detection, hazard alerts, traffic intelligence&mdash;the outputs that matter</li>
+                </ul>
+                <p className="text-gray-400 mt-4 text-sm">
+                  The future of vision intelligence isn&apos;t just for Tesla and Waymo. It&apos;s for every fleet,
+                  every DOT camera, every traffic system.
                 </p>
               </div>
 
