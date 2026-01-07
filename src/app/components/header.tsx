@@ -417,11 +417,18 @@ export default function Header() {
                     {/* Left side - Menu items */}
                     <div className="flex-1 p-6">
                       <Link
+                        href="/solutions/app"
+                        onClick={() => setIsSolutionsOpen(false)}
+                        className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-bold text-sm"
+                      >
+                        Argus Nav App
+                      </Link>
+                      <Link
                         href="/solutions#mobility"
                         onClick={() => setIsSolutionsOpen(false)}
                         className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
                       >
-                        Mobility & Traffic Intelligence
+                        Argus API
                       </Link>
                       <Link
                         href="/solutions#incident-911"

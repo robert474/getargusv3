@@ -53,7 +53,7 @@ export default function WhoItsFor() {
                 </li>
               </ul>
               <p className="text-sm text-gray-400 mb-4">Available on:</p>
-              <div className="flex flex-row items-center gap-6">
+              <div className="flex flex-row items-center gap-6 mb-6">
                 <div className="bg-white rounded-lg px-4 py-3">
                   <Image
                     src="/images/platform-science-logo.png"
@@ -73,6 +73,13 @@ export default function WhoItsFor() {
                   />
                 </div>
               </div>
+              <a
+                href="/solutions/app"
+                className="inline-flex items-center justify-center px-6 py-3 bg-[#C9A23A] hover:bg-[#E7C873] text-[#0F172A] rounded-lg font-semibold transition-colors w-full sm:w-auto"
+              >
+                Get the App
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
             </div>
           </div>
 

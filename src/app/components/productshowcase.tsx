@@ -61,7 +61,7 @@ export default function ProductShowcase() {
                 In-cab alerts on Platform Science & Geotab. No integration required.
               </p>
               <a
-                href="#get-started"
+                href="/solutions/app"
                 className="inline-flex items-center text-[#C9A23A] font-semibold hover:text-[#E7C873] transition-colors"
               >
                 Get the App
