@@ -52,7 +52,7 @@ export default function AppLandingPage() {
     {
       icon: <MapPin className="w-8 h-8" />,
       title: "Weigh Stations & Parking",
-      description: "Know which weigh stations are open, find truck parking, and locate rest stops with real availability."
+      description: "Know which weigh stations are open and find truck stops along your route. Plan your breaks without the guesswork."
     }
   ];
 
@@ -70,8 +70,8 @@ export default function AppLandingPage() {
       solution: "Routes designed for commercial trucks"
     },
     {
-      problem: "No parking at the truck stop",
-      solution: "Real-time parking availability"
+      problem: "Waze routed you to a closed weigh station",
+      solution: "Current weigh station status on your route"
     }
   ];
 
@@ -172,7 +172,7 @@ export default function AppLandingPage() {
                     </div>
                     <div className="w-px h-12 bg-white/20"></div>
                     <div>
-                      <div className="text-3xl font-bold text-white">10K+</div>
+                      <div className="text-3xl font-bold text-white">40K+</div>
                       <div className="text-sm text-gray-400">Traffic Cameras</div>
                     </div>
                     <div className="w-px h-12 bg-white/20"></div>
@@ -317,7 +317,7 @@ export default function AppLandingPage() {
                 <div className="text-5xl font-bold text-[#0F172A] mb-2">1</div>
                 <h3 className="text-xl font-bold text-[#0F172A] mb-3">AI Watches Traffic Cameras</h3>
                 <p className="text-gray-600">
-                  Our computer vision monitors 10,000+ DOT cameras 24/7, analyzing every frame for incidents.
+                  Our computer vision monitors 40,000+ DOT cameras 24/7, analyzing every frame for incidents.
                 </p>
               </div>
 
@@ -462,7 +462,7 @@ export default function AppLandingPage() {
                   </li>
                   <li className="flex items-center gap-3">
                     <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">Weigh station & parking info</span>
+                    <span className="text-gray-700">Weigh station status info</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
