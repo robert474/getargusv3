@@ -19,6 +19,16 @@ export const metadata: Metadata = {
 // Blog posts data - in production this would come from a CMS or database
 const blogPosts = [
   {
+    slug: 'dashcams-are-tape-players-future-is-vision-intelligence',
+    title: 'Today\'s Dashcams Are Tape Players: The Future Is Vision Intelligence',
+    excerpt: 'Most fleet dashcams are glorified tape recorders. Meanwhile, Tesla and Waymo process terabytes of visual data in real-time. The gap is staggering—and it\'s about to close.',
+    date: '2025-01-07',
+    readTime: '8 min read',
+    category: 'Industry Trends',
+    featured: false,
+    image: '/images/cars.png',
+  },
+  {
     slug: 'autonomous-vehicles-need-faster-traffic-data',
     title: 'Autonomous Vehicles Need Faster Traffic Data: Building the Neural Network for Roads',
     excerpt: 'The AV market is exploding toward $4.5 trillion. But vehicles can only be as smart as their data infrastructure. We need to build the data rail first.',
