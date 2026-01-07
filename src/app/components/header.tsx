@@ -219,7 +219,7 @@
 //      {/* Contact Button - Far Right */}
 //           <div className="hidden md:flex md:items-center md:justify-end w-1/4">
 //             <Link
-//               href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+//               href="https://calendly.com/robertputt/30minutemeet"
 //               className="bg-[#C9A23A] text-white px-6 py-2.5 rounded-md hover:bg-[#E7C873] transition-colors duration-200 font-semibold"
 //             >
 //               Contact
@@ -672,7 +672,7 @@ export default function Header() {
           {/* Contact Button - Far Right */}
           <div className="hidden md:flex md:items-center md:justify-end w-1/4">
             <Link
-              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+              href="https://calendly.com/robertputt/30minutemeet"
               className="bg-[#7FB7FF] text-[#0F172A] px-6 py-2.5 rounded-md hover:bg-[#A5CEFF] transition-colors duration-200 font-semibold"
             >
               Contact

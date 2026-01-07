@@ -156,7 +156,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="mt-8 lg:mt-10 flex flex-col sm:flex-row gap-4">
               <a
-                href="#get-started"
+                href="/solutions/app"
                 className="inline-block bg-[#7FB7FF] text-[#0F172A] px-8 py-3 lg:px-10 lg:py-4 xl:px-12 xl:py-5 rounded-lg text-lg lg:text-xl xl:text-2xl font-semibold hover:bg-[#A5CEFF] transition-colors duration-200 shadow-lg text-center"
               >
                 Get the Fleet App

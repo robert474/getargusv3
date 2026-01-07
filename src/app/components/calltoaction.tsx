@@ -61,7 +61,7 @@ const CallToAction = () => {
               We&apos;ll be in touch within 24 hours to schedule your demo.
             </p>
             <a
-              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+              href="https://calendly.com/robertputt/30minutemeet"
               className="inline-flex items-center text-[#C9A23A] font-semibold hover:underline"
             >
               Or book a call now
@@ -211,7 +211,7 @@ const CallToAction = () => {
             <p className="text-xs text-gray-500 mt-4 text-center">
               Or{' '}
               <a
-                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+                href="https://calendly.com/robertputt/30minutemeet"
                 className="text-[#C9A23A] hover:underline"
               >
                 book a call directly

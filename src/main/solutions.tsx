@@ -235,7 +235,7 @@
 //         {/* Bottom CTA */}
 //         <div className="text-center mt-16">
 //           <Link 
-//            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+//            href="https://calendly.com/robertputt/30minutemeet"
 //             className="inline-flex items-center px-8 py-4 text-base font-semibold rounded-lg text-[#233247] bg-[#C9A23A] hover:bg-[#E7C873] transform hover:scale-105 transition-all duration-200 shadow-lg"
 //           >
 //             Contact Us
@@ -486,7 +486,7 @@ export default function Solutions() {
         {/* Bottom CTA - Light blue for consistency */}
         <div className="text-center mt-12 md:mt-16">
           <Link 
-            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+            href="https://calendly.com/robertputt/30minutemeet"
             className="inline-flex items-center px-6 py-3 md:px-8 md:py-4 text-sm md:text-base font-semibold rounded-lg text-[#0F172A] bg-[#7FB7FF] hover:bg-[#A5CEFF] transform hover:scale-105 transition-all duration-200 shadow-lg"
           >
             Contact Us

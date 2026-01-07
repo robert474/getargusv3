@@ -49,7 +49,7 @@ export default function PlatformPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
-                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+                href="https://calendly.com/robertputt/30minutemeet"
                 className="inline-flex items-center px-6 py-3 bg-[#C9A23A] hover:bg-[#E7C873] text-[#0F172A] rounded-lg font-semibold transition-colors"
               >
                 Get API Access
@@ -513,14 +513,14 @@ export default function PlatformPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+                href="https://calendly.com/robertputt/30minutemeet"
                 className="inline-flex items-center px-8 py-4 bg-[#C9A23A] hover:bg-[#E7C873] text-[#0F172A] rounded-lg font-semibold transition-colors text-lg"
               >
                 Get API Access
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link
-                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3opt3pRGPQDYnT5IBpyltSRS764eRUP_ptoibtRyObzq1DwIR799VDAlXQucq2AnDlZgrN3vPV"
+                href="https://calendly.com/robertputt/30minutemeet"
                 className="inline-flex items-center px-8 py-4 border border-white/30 hover:border-white text-white rounded-lg font-semibold transition-colors text-lg"
               >
                 Learn More
