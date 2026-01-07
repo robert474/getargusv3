@@ -52,10 +52,10 @@ export default function FleetsPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
-                    href="/#get-started"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-[#C9A23A] hover:bg-[#E7C873] text-[#0F172A] rounded-lg font-semibold transition-colors"
+                    href="/solutions/app"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-[#7FB7FF] hover:bg-[#A5CEFF] text-[#0F172A] rounded-lg font-semibold transition-colors"
                   >
-                    Get Fleet Alerts
+                    Get the App
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                   <Link

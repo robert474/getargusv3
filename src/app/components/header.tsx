@@ -426,7 +426,7 @@ export default function Header() {
                       <Link
                         href="/solutions#mobility"
                         onClick={() => setIsSolutionsOpen(false)}
-                        className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
+                        className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-bold text-sm"
                       >
                         Argus API
                       </Link>
