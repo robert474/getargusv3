@@ -251,7 +251,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Building2, Truck, Car, Shield, Scale, CheckCircle } from 'lucide-react';
+import Link from 'next/link';
+import { Building2, Truck, Car, Shield, Scale, CheckCircle, ArrowRight } from 'lucide-react';
 import CallToAction from '@/app/components/calltoaction';
 
 const Industries = () => {
@@ -494,6 +495,32 @@ const Industries = () => {
               </div>
             </div>
           </div>
+
+          {/* Fleet-specific CTAs */}
+          {activeIndustry === 'fleet' && (
+            <div className="mt-10 md:mt-16 text-center">
+              <h3 className="text-xl md:text-2xl font-bold text-[#0F172A] mb-4">Get Started with Argus</h3>
+              <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Choose the integration that works best for your fleet
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/solutions/app"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-[#7FB7FF] hover:bg-[#A5CEFF] text-[#0F172A] rounded-lg font-semibold transition-colors"
+                >
+                  Get the App
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+                <Link
+                  href="/developer/api"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-[#0F172A] hover:bg-[#1e293b] text-white rounded-lg font-semibold transition-colors"
+                >
+                  See API Docs
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
