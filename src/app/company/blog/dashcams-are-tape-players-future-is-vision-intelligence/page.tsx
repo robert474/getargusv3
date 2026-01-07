@@ -118,11 +118,18 @@ export default function BlogPost() {
 
               <div className="bg-red-50 rounded-xl p-6 my-8 border-l-4 border-red-500">
                 <p className="text-red-800 font-semibold mb-2">The Passive Video Problem</p>
-                <p className="text-red-700">
-                  A fleet of 500 trucks generates approximately 4,000 hours of dashcam footage per day.
-                  At $15/hour for a human reviewer, watching it all would cost $60,000 daily. So nobody
-                  watches it&mdash;and 99.9% of the intelligence captured by those cameras is never used.
-                  It&apos;s only retrieved when something goes wrong.
+                <p className="text-red-700 mb-4">
+                  A fleet of 500 trucks generates approximately <strong>4,000 hours</strong> of dashcam footage per day.
+                </p>
+                <p className="text-red-700 mb-4">
+                  Coaching notifications hit fleet managers&apos; inboxes. They call the driver the same day
+                  or the following day. That&apos;s maybe <strong>0.1 hours</strong> of footage actually reviewed.
+                </p>
+                <p className="text-red-700 font-semibold">
+                  The other 3,999.9 hours? Wasted. No data. No information. No intelligence.
+                </p>
+                <p className="text-red-800 mt-4 font-bold">
+                  It&apos;s a gold mine of undeveloped data.
                 </p>
               </div>
 
