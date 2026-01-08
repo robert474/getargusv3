@@ -153,7 +153,7 @@ export default function AppLandingPage() {
                     className="inline-flex items-center justify-center px-8 py-4 bg-[#7FB7FF] text-[#0F172A] rounded-lg text-lg font-bold hover:bg-[#A5CEFF] transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
                   >
                     <Smartphone className="w-5 h-5 mr-2" />
-                    Get Early Access
+                    Join the Waiting List
                   </Link>
                   <Link
                     href="#how-it-works"
@@ -478,7 +478,7 @@ export default function AppLandingPage() {
                   href="#notify"
                   className="block w-full text-center px-8 py-4 bg-[#0F172A] text-white rounded-lg text-lg font-bold hover:bg-[#1e293b] transition-colors"
                 >
-                  Start Your Free Trial
+                  Join the Waiting List
                 </Link>
               </div>
             </div>
@@ -538,12 +538,30 @@ export default function AppLandingPage() {
               Early access members get their first month free.
             </p>
 
-            <a
-              href="mailto:robert@getargus.ai?subject=Argus%20Nav%20Waitlist&body=I%27d%20like%20to%20join%20the%20Argus%20Nav%20waiting%20list.%20Please%20notify%20me%20when%20the%20app%20is%20available."
-              className="inline-block px-8 py-4 bg-[#C9A23A] text-[#0F172A] rounded-lg font-bold hover:bg-[#E7C873] transition-colors"
-            >
-              Join Waiting List
-            </a>
+            {/* Email signup box */}
+            <div className="max-w-lg mx-auto bg-white/10 rounded-2xl p-6 md:p-8 border border-white/20">
+              <form
+                action="https://formsubmit.co/hello@getargus.ai"
+                method="POST"
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <input type="hidden" name="_subject" value="Argus Nav Waitlist Signup" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-6 py-4 rounded-lg bg-white text-[#0F172A] font-medium border-2 border-transparent focus:outline-none focus:border-[#C9A23A] placeholder-gray-500"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="px-8 py-4 bg-[#C9A23A] text-[#0F172A] rounded-lg font-bold hover:bg-[#E7C873] transition-colors whitespace-nowrap"
+                >
+                  Join Waiting List
+                </button>
+              </form>
+            </div>
 
             <p className="text-gray-500 text-sm mt-4">
               No spam, ever. Just a notification when the app launches.
