@@ -86,7 +86,7 @@ export default function AppLandingPage() {
     },
     {
       question: "What happens after my free trial?",
-      answer: "After your 7-day free trial, it's $8/month. No contracts, cancel anytime. Most drivers tell us they save more than that in fuel and time on their first avoided traffic jam."
+      answer: "After your 7-day free trial, it's $7/month. No contracts, cancel anytime. Most drivers tell us they save more than that in fuel and time on their first avoided traffic jam."
     },
     {
       question: "Does it work with my ELD/telematics?",
@@ -138,7 +138,7 @@ export default function AppLandingPage() {
                   </div>
                   <div className="flex items-center gap-2 text-gray-300">
                     <Check className="w-5 h-5 text-[#C9A23A]" />
-                    <span>Then just $8/month</span>
+                    <span>Then just $7/month</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-300">
                     <Check className="w-5 h-5 text-[#C9A23A]" />
@@ -442,7 +442,7 @@ export default function AppLandingPage() {
               <div className="p-8 md:p-12">
                 <div className="text-center mb-8">
                   <div className="text-5xl font-bold text-[#0F172A] mb-2">
-                    $8<span className="text-2xl font-normal text-gray-500">/month</span>
+                    $7<span className="text-2xl font-normal text-gray-500">/month</span>
                   </div>
                   <p className="text-gray-600">after 7-day free trial</p>
                 </div>
