@@ -527,37 +527,23 @@ export default function AppLandingPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center gap-2 bg-[#C9A23A]/20 text-[#C9A23A] px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <Clock className="w-4 h-4" />
-              Coming Soon to iOS & Android
+              Coming Soon
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Be First to Get Argus Nav
+              Join the Waiting List
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join the waitlist and we&apos;ll notify you the moment the app is available.
+              Be the first to know when Argus Nav launches.
               Early access members get their first month free.
             </p>
 
-            <form
-              action="mailto:robert@getargus.ai"
-              method="POST"
-              encType="text/plain"
-              className="max-w-md mx-auto flex flex-col sm:flex-row gap-4"
+            <a
+              href="mailto:robert@getargus.ai?subject=Argus%20Nav%20Waitlist&body=I%27d%20like%20to%20join%20the%20Argus%20Nav%20waiting%20list.%20Please%20notify%20me%20when%20the%20app%20is%20available."
+              className="inline-block px-8 py-4 bg-[#C9A23A] text-[#0F172A] rounded-lg font-bold hover:bg-[#E7C873] transition-colors"
             >
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-4 rounded-lg text-[#0F172A] font-medium focus:outline-none focus:ring-2 focus:ring-[#C9A23A]"
-                required
-              />
-              <button
-                type="submit"
-                className="px-8 py-4 bg-[#C9A23A] text-[#0F172A] rounded-lg font-bold hover:bg-[#E7C873] transition-colors whitespace-nowrap"
-              >
-                Notify Me
-              </button>
-            </form>
+              Join Waiting List
+            </a>
 
             <p className="text-gray-500 text-sm mt-4">
               No spam, ever. Just a notification when the app launches.
