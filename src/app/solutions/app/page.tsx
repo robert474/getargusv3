@@ -538,9 +538,15 @@ export default function AppLandingPage() {
               Early access members get their first month free.
             </p>
 
-            <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+            <form
+              action="mailto:robert@getargus.ai"
+              method="POST"
+              encType="text/plain"
+              className="max-w-md mx-auto flex flex-col sm:flex-row gap-4"
+            >
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your email"
                 className="flex-1 px-6 py-4 rounded-lg text-[#0F172A] font-medium focus:outline-none focus:ring-2 focus:ring-[#C9A23A]"
                 required
