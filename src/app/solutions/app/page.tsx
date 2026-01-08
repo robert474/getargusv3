@@ -478,7 +478,7 @@ export default function AppLandingPage() {
                   href="#notify"
                   className="block w-full text-center px-8 py-4 bg-[#0F172A] text-white rounded-lg text-lg font-bold hover:bg-[#1e293b] transition-colors"
                 >
-                  Join the Waiting List
+                  Join Waiting List for Free Trial
                 </Link>
               </div>
             </div>
