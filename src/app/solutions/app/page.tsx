@@ -541,7 +541,7 @@ export default function AppLandingPage() {
             {/* Email signup box */}
             <div className="max-w-lg mx-auto bg-white/10 rounded-2xl p-6 md:p-8 border border-white/20">
               <form
-                action="https://formsubmit.co/hello@getargus.ai"
+                action="https://formsubmit.co/info@getargus.ai"
                 method="POST"
                 className="flex flex-col sm:flex-row gap-4"
               >
