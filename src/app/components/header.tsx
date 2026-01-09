@@ -424,35 +424,22 @@ export default function Header() {
                         Argus Nav App
                       </Link>
                       <Link
-                        href="/solutions#mobility"
+                        href="/developer/api"
                         onClick={() => setIsSolutionsOpen(false)}
                         className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-bold text-sm"
                       >
                         Argus API
                       </Link>
+                      <div className="border-t border-gray-100 my-2"></div>
                       <Link
-                        href="/solutions#incident-911"
+                        href="/use-cases"
                         onClick={() => setIsSolutionsOpen(false)}
                         className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
                       >
-                        Incident Management & 911
-                      </Link>
-                      <Link
-                        href="/solutions#public-records"
-                        onClick={() => setIsSolutionsOpen(false)}
-                        className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
-                      >
-                        Public Records & Open Data
-                      </Link>
-                      <Link
-                        href="/solutions#cctv-distribution"
-                        onClick={() => setIsSolutionsOpen(false)}
-                        className="block py-2.5 px-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium text-sm"
-                      >
-                        CCTV Streaming & Distribution
+                        Use Cases
                       </Link>
                     </div>
-                    
+
                     {/* Right side - Image */}
                     <div className="w-48 relative bg-gray-50">
                       <Image
@@ -716,11 +703,25 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden pb-4 space-y-2">
             <Link
-              href="/solutions"
+              href="/solutions/app"
+              className="block px-4 py-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-bold"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Argus Nav App
+            </Link>
+            <Link
+              href="/developer/api"
+              className="block px-4 py-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-bold"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Argus API
+            </Link>
+            <Link
+              href="/use-cases"
               className="block px-4 py-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
-              Solutions
+              Use Cases
             </Link>
             <Link
               href="/industries"
@@ -735,13 +736,6 @@ export default function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               Traffic Ontology
-            </Link>
-            <Link
-              href="/developer/api"
-              className="block px-4 py-3 text-[#0F172A] hover:bg-[#F2F5F9] hover:text-[#C9A23A] transition-colors duration-200 rounded-md font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              API Docs
             </Link>
             <Link
               href="/about"
