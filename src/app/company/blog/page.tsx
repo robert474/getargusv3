@@ -19,6 +19,26 @@ export const metadata: Metadata = {
 // Blog posts data - in production this would come from a CMS or database
 const blogPosts = [
   {
+    slug: 'best-truck-navigation-apps-2025',
+    title: 'Best Truck Navigation Apps 2025: Which Actually Warns You About Crashes?',
+    excerpt: 'We tested the top truck GPS apps on what matters most: crash detection speed, low bridge warnings, and truck-safe routing. The results will surprise you.',
+    date: '2025-01-09',
+    readTime: '10 min read',
+    category: 'App Comparison',
+    featured: true,
+    image: '/images/cars2.png',
+  },
+  {
+    slug: 'best-traffic-api-for-developers-2025',
+    title: 'Best Traffic APIs for Developers 2025: Latency Matters More Than You Think',
+    excerpt: 'We benchmarked major traffic APIs on incident detection latency. The differences are significant—from 10 seconds to 16 minutes.',
+    date: '2025-01-09',
+    readTime: '12 min read',
+    category: 'Developer Guide',
+    featured: false,
+    image: '/images/incidentdashboard.png',
+  },
+  {
     slug: 'dashcams-are-tape-players-future-is-vision-intelligence',
     title: 'Today\'s Dashcams Are Tape Players: The Future Is Vision Intelligence',
     excerpt: 'Most fleet dashcams are glorified tape recorders. Meanwhile, Tesla and Waymo process terabytes of visual data in real-time. The gap is staggering—and it\'s about to close.',
