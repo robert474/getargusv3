@@ -666,7 +666,7 @@ export default function Header() {
           {/* Contact Button - Far Right */}
           <div className="hidden md:flex md:items-center md:justify-end w-1/4">
             <Link
-              href="https://calendly.com/robertputt/30minutemeet"
+              href="/company/contact"
               className="bg-[#7FB7FF] text-[#0F172A] px-6 py-2.5 rounded-md hover:bg-[#A5CEFF] transition-colors duration-200 font-semibold"
             >
               Contact
